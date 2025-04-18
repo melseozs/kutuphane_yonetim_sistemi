@@ -7,7 +7,7 @@ export default function About() {
     <div className="bg-white min-h-screen p-10">
       <Header showSearch={false} />
 
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+      <h1 className="text-4xl font-bold text-center text-gray-800 mt-18 mb-8">
         Hakkımızda
       </h1>
 
