@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Components/Header'; // Header import edildi
 
-// Soruları ve cevapları burada tutuyoruz
 const faqData = [
   {
     question: 'Kütüphaneyi kimler kullanabilir?',
@@ -46,29 +46,32 @@ function FAQ() {
   };
 
   return (
-    <div className="min-h-screen bg-orange-50 flex items-center justify-center p-6">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
-        <h2 className="text-3xl font-bold text-center mb-6 text-black">Sıkça Sorulan Sorular</h2>
-        <div className="divide-y divide-pink-100">
-          {faqData.map((item, index) => (
-            <div key={index} className="py-4">
-              <button
-                onClick={() => toggleAnswer(index)}
-                className="w-full text-left font-semibold text-lg p-3 bg-gray-200 text-black rounded-md hover:bg-gray-100 transition flex justify-between items-center"
-              >
-                {item.question}
-                <span>{openIndex === index ? '−' : '+'}</span>
-              </button>
-              {openIndex === index && (
-                <div className="mt-2 p-3 bg-pink-50 text-black rounded-md">
-                  {item.answer}
-                </div>
-              )}
-            </div>
-          ))}
+    <>
+      <Header showSearch={false} /> {/* Arama çubuğu gizli */}
+      <div className="min-h-screen bg-orange-50 flex items-center justify-center p-6 pt-36">
+        <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
+          <h2 className="text-3xl font-bold text-center mb-6 text-black">Sıkça Sorulan Sorular</h2>
+          <div className="divide-y divide-pink-100">
+            {faqData.map((item, index) => (
+              <div key={index} className="py-4">
+                <button
+                  onClick={() => toggleAnswer(index)}
+                  className="w-full text-left font-semibold text-lg p-3 bg-gray-200 text-black rounded-md hover:bg-gray-100 transition flex justify-between items-center"
+                >
+                  {item.question}
+                  <span>{openIndex === index ? '−' : '+'}</span>
+                </button>
+                {openIndex === index && (
+                  <div className="mt-2 p-3 bg-pink-50 text-black rounded-md">
+                    {item.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

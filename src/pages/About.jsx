@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
+import Header from '../Components/Header'; 
 
 export default function About() {
   return (
     <div className="bg-white min-h-screen p-10">
-      {/* Başlık */}
+      <Header showSearch={false} />
+
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
         Hakkımızda
       </h1>
 
-      {/* İçerik */}
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
         <p className="text-lg text-gray-700 leading-relaxed mb-4">
           Kütüphane Yönetim Sistemi, bilgiye erişimi kolaylaştırmak, kitapları ve kaynakları
