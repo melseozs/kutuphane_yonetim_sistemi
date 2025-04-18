@@ -11,18 +11,22 @@ import AdminPage from './Services/AdminPage.jsx';
 import FAQ from './Services/FAQ.jsx';
 
 const router = createBrowserRouter([
-    { path: "/", element: <Anasayfa /> },
-    { path: "/about", element: <About /> },
-    { path: "/contact", element: <Contact /> },
-    { path: "/login", element: <LoginPage /> },
-    { path: "/admin", element: <AdminPage/> },
-    { path: "/faq", element: <FAQ/>},
-
-  ]);
+  {
+    path: '/',
+    element: <App />, // 
+    children: [
+      { index: true, element: <Anasayfa /> },
+      { path: 'about', element: <About /> },
+      { path: 'contact', element: <Contact /> },
+      { path: 'login', element: <LoginPage /> },
+      { path: 'admin', element: <AdminPage /> },
+      { path: 'faq', element: <FAQ /> }
+    ]
+  }
+]);
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
