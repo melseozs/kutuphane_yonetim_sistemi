@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaTrash, FaUserPlus } from 'react-icons/fa';
 
 const KullaniciYonetimi = () => {
   const [kullanicilar, setKullanicilar] = useState([
@@ -26,43 +27,51 @@ const KullaniciYonetimi = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-6">Kullanıcı Yönetimi</h2>
+    <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg mt-10">
+      <h2 className="text-3xl font-bold text-[#463C74] text-center border-b pb-4 mb-8">👥 Kullanıcı Yönetimi</h2>
 
       {/* Ekleme Formu */}
-      <div className="mb-6 flex gap-4">
+      <div className="mb-8 flex flex-col md:flex-row items-center gap-4">
         <input
           type="text"
           placeholder="Ad Soyad"
           value={yeniAd}
           onChange={(e) => setYeniAd(e.target.value)}
-          className="border px-3 py-2 rounded w-1/3"
+          className="border border-gray-300 px-4 py-2 rounded-lg flex-1 focus:ring focus:ring-[#fdd9a0]"
         />
         <input
           type="email"
           placeholder="Email"
           value={yeniEmail}
           onChange={(e) => setYeniEmail(e.target.value)}
-          className="border px-3 py-2 rounded w-1/3"
+          className="border border-gray-300 px-4 py-2 rounded-lg flex-1 focus:ring focus:ring-[#fdd9a0]"
         />
-        <button onClick={handleEkle} className="bg-[#fdd9a0] px-4 py-2 rounded hover:bg-[#fcb96e]">
+        <button
+          onClick={handleEkle}
+          className="flex items-center gap-2 bg-[#fdd9a0] hover:bg-[#fcb96e] text-black px-5 py-2 rounded-lg font-semibold transition"
+        >
+          <FaUserPlus />
           Ekle
         </button>
       </div>
 
       {/* Kullanıcı Listesi */}
-      <ul className="space-y-3">
+      <ul className="space-y-4">
         {kullanicilar.map((kullanici) => (
-          <li key={kullanici.id} className="flex justify-between items-center border-b py-2">
+          <li
+            key={kullanici.id}
+            className="flex justify-between items-center bg-[#f9f7f3] px-4 py-3 rounded-lg shadow-sm hover:shadow-md transition"
+          >
             <div>
-              <p className="font-semibold">{kullanici.ad}</p>
+              <p className="font-semibold text-[#463C74]">{kullanici.ad}</p>
               <p className="text-gray-600 text-sm">{kullanici.email}</p>
             </div>
             <button
               onClick={() => handleSil(kullanici.id)}
-              className="text-red-600 hover:underline"
+              className="text-red-600 hover:text-red-800 hover:scale-105 transition flex items-center gap-2"
             >
-              Sil
+              <FaTrash />
+              <span>Sil</span>
             </button>
           </li>
         ))}

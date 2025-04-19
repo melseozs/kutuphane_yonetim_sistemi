@@ -1,55 +1,68 @@
 import React from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { FaHome,FaBook, FaUsersCog, FaChartBar } from "react-icons/fa";
-
-
-
-
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import {
+  FaHome,
+  FaBook,
+  FaUsersCog,
+  FaChartBar,
+  FaSync,
+  FaSignOutAlt
+} from "react-icons/fa";
 
 const AdminPanel = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  
-
   const menuItems = [
-    { label: ' Ana Sayfa', path: '/', icon: <FaHome />, external: true },
-    { label: 'Kitap Yönetimi', path: 'kitap-yonetimi', icon: <FaBook className="inline-block mr-2" /> },
-    { label: 'Kullanıcı Yönetimi', path: 'kullanici-yonetimi', icon: <FaUsersCog className="inline-block mr-2" /> },
-    { label: 'İstatistikler', path: 'istatistikler', icon: <FaChartBar className="inline-block mr-2" /> },
+    { label: 'Ödünç Yönetimi', path: '/admin-panel/odunc-yonetimi', icon: <FaSync /> },
+    { label: 'Ana Sayfa', path: '/', icon: <FaHome /> },
+    { label: 'Kitap Yönetimi', path: '/admin-panel/kitap-yonetimi', icon: <FaBook /> },
+    { label: 'Kullanıcı Yönetimi', path: '/admin-panel/kullanici-yonetimi', icon: <FaUsersCog /> },
+    { label: 'İstatistikler', path: '/admin-panel/istatistikler', icon: <FaChartBar /> },
   ];
-  
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminToken');
+    navigate('/');
+  };
 
   return (
-    <div className="flex min-h-screen bg-[#FAEEE7]">
+    <div className="flex min-h-screen font-sans bg-gradient-to-r from-[#fff8f1] to-[#ffece6]">
       {/* SOL MENÜ */}
-      <div className="w-64 bg-[#fffaf3] border-r p-6">
-        <h2 className="text-xl font-bold mb-6">Admin Paneli</h2>
-        <ul className="space-y-4">
-          {menuItems.map((item) => (
-            <li key={item.path}>
-              <Link
-                to={item.path}
-                className={`block px-4 py-2 rounded-md hover:bg-[#fde2bc] transition ${
-                  location.pathname.includes(item.path)
-                    ? 'bg-[#fde2bc] font-semibold'
-                    : ''
-                }`}
-              >
-                <span className="flex items-center gap-2">
-  {item.icon}
-  {item.label}
-</span>
+      <div className="w-64 bg-white border-r shadow-lg p-6 flex flex-col justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-[#463C74] mb-8">📚 Admin Paneli</h2>
+          <ul className="space-y-3">
+            {menuItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all duration-200 
+                    ${location.pathname === item.path
+                      ? 'bg-[#fdd9a0] text-[#463C74] shadow-md font-semibold'
+                      : 'hover:bg-[#fef3d6] text-gray-700'}
+                  `}
+                >
+                  {item.icon}
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* ÇIKIŞ */}
+        <button
+          onClick={handleLogout}
+          className="mt-10 flex items-center gap-2 text-red-500 hover:text-red-700 text-sm hover:scale-105 transition"
+        >
+          <FaSignOutAlt />
+          Çıkış Yap
+        </button>
       </div>
 
       {/* SAĞ İÇERİK */}
-      <div className="flex-grow p-10 bg-white">
+      <div className="flex-grow p-10 bg-white shadow-inner rounded-l-3xl">
         <Outlet />
       </div>
     </div>

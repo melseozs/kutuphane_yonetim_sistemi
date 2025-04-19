@@ -18,6 +18,8 @@ import AdminPanel from './pages/admin/AdminPanel.jsx';
 import KitapYonetimi from './pages/admin/KitapYonetimi.jsx';
 import KullaniciYonetimi from './pages/admin/KullaniciYonetimi.jsx';
 import Istatistikler from './pages/admin/İstatistikler.jsx';
+import OduncYonetimi from './pages/admin/OduncYonetimi'; 
+
 
 import VizyonMisyon from './pages/About/VizyonMisyon.jsx';
 import KutuphaneKurallari from './pages/About/KutuphaneKurallari.jsx';
@@ -53,6 +55,8 @@ const router = createBrowserRouter([
       { path: 'kitap-yonetimi', element: <KitapYonetimi /> },
       { path: 'kullanici-yonetimi', element: <KullaniciYonetimi /> },
       { path: 'istatistikler', element: <Istatistikler /> },
+      { path: 'odunc-yonetimi', element: <OduncYonetimi /> },
+
     ],
   },
 ]);
