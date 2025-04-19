@@ -13,19 +13,13 @@ function VizyonMisyon() {
             <div>
               <h2 className="text-3xl font-bold text-amber-900 mb-4 border-b border-amber-200 pb-2">VİZYON</h2>
               <p className="text-gray-800 leading-relaxed text-lg">
-                Gelişen teknolojiyi en iyi şekilde kullanan, yurt içinde ve uluslararasında itibar sahibi bir araştırma
-                kütüphanesi oluşturmayı hedefliyoruz. Başta üniversitemizin eğitim verdiği bilim dalları olmak üzere her
-                konuda iyi bir koleksiyona, deneyimli ve yeterli sayıda personele sahip olarak kısa bir süre içinde saygın,
-                güçlü ve örnek gösterilebilecek nitelikte bir araştırma kütüphanesi oluşturup, devamlı gelişmesini
-                sağlamaktır.
+              Gelişen teknolojiyi en iyi şekilde kullanan, ulusal ve uluslararası düzeyde itibarlı bir araştırma kütüphanesi oluşturmak hedeflenmektedir. Her alanda zengin bir koleksiyona, deneyimli ve yeterli sayıda personele sahip olarak, kısa sürede güçlü, saygın ve örnek gösterilebilecek bir araştırma kütüphanesi yapısına ulaşılması ve bu yapının sürekli geliştirilmesi amaçlanmaktadır.
               </p>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-amber-900 mb-4 border-b border-amber-200 pb-2">MİSYON</h2>
               <p className="text-gray-800 leading-relaxed text-lg">
-                Üniversitemizdeki eğitim ve öğretime destek olmaktır. Her daim kendimizi geliştirerek bu amaç doğrultusunda,
-                kitap, dergi, CD vs. tüm materyalleri tespit etmek, sağlamak ve üniversite mensuplarımız başta olmak üzere
-                tüm kullanıcıların hizmetine sunmaktır.
+              Eğitim ve öğretime etkin biçimde destek sağlamak; kitap, dergi, CD gibi tüm bilgi kaynaklarını belirleyip temin ederek kullanıcıların hizmetine sunmak ve sürekli gelişimi esas alan bir bilgi hizmeti sunmaktır.
               </p>
             </div>
           </div>

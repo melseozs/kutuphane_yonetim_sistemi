@@ -65,7 +65,7 @@ function Header({ showSearch = false }) {
         </nav>
       </div>
       {showSearch && (
-  <div className="w-full bg-[#fff3e7] py-4 mt-4">
+  <div className="w-full bg-[#cfe3e1] py-4 mt-4">
     <div className="max-w-4xl mx-auto flex items-center space-x-2">
       <input
         type="text"
