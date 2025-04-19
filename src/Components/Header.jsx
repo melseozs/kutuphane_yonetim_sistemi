@@ -5,7 +5,6 @@ function Header({ showSearch = false }) {
   return (
     <header className="bg-orange-50 w-full fixed top-0 left-0 z-10 p-4 shadow-md">
       <div className="flex justify-between items-start">
-        {/* Logo ve başlık */}
         <div className="text-black text-xl font-bold">
           <div className="flex items-center space-x-3">
             <img
@@ -18,8 +17,6 @@ function Header({ showSearch = false }) {
             </span>
           </div>
         </div>
-
-        {/* Navigasyon */}
         <nav className="flex justify-end space-x-8">
           <div className="text-center p-4 hover:bg-white hover:rounded-lg transition duration-300 m-2">
             <Link to="/about" className="text-black hover:text-amber-900 text-xl font-sans">
@@ -65,10 +62,8 @@ function Header({ showSearch = false }) {
           </div>
         </nav>
       </div>
-
-      {/* Sadece showSearch true ise göster */}
       {showSearch && (
-        <div className="w-full bg-emerald-200/20 py-4 mt-4">
+        <div className="w-full bg-[#FAEEE7] py-4 mt-4">
           <div className="max-w-4xl mx-auto flex items-center space-x-2">
             <input
               type="text"

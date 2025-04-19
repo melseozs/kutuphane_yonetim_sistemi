@@ -14,7 +14,7 @@ import BooksList from './BooksList';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />, // 
+    element: <App />, 
     children: [
       { index: true, element: <Anasayfa /> },
       { path: 'about', element: <About /> },
