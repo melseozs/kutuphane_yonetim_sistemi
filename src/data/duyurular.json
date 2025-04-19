@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "baslik": "Yazılım Kulübü Etkinliği Başladı",
+      "icerik": "Yazılım Kulübü'nün etkinliğinde öğrenciler hem öğrendi hem eğlendi.",
+      "detay": "Etkinlik boyunca öğrenciler hem algoritma yarışmalarına katıldı hem de oyun geliştirme atölyelerinde proje ürettiler. Katılımcılara sertifika verildi ve kulüp üyeleriyle söyleşi düzenlendi.",
+      "resim": "1.duyuru.jpeg"
+    },
+    {
+      "id": 2,
+      "baslik": "Kütüphane Haftası Kutlaması",
+      "icerik": "Kütüphane personeli kitap okuma etkinliği düzenledi.",
+      "detay": "Üniversite bahçesinde düzenlenen açık hava kitap okuma etkinliğinde öğrenciler battaniyeler üzerinde kitap okuyarak farkındalık oluşturdu. En çok kitap okuyan öğrencilere kitap hediyesi verildi.",
+      "resim": "2.duyuru.jpeg"
+    },
+    {
+      "id": 3,
+      "baslik": "TÜBİTAK Projeleri Tanıtıldı",
+      "icerik": "Öğrencilerin geliştirdiği  TÜBİTAK Bilim İnsanı Destek Programlar kapsamındaki projeler fakültede sergilendi.",
+      "detay": "Proje sergisi büyük ilgi gördü. Öğrenciler danışman hocaları eşliğinde sunumlarını yaparken TÜBİTAK yetkilileriyle de birebir görüşme imkânı buldu. Etkinlik sonunda başarılı projelere plaket verildi.",
+      "resim": "3.duyuru.jpeg"
+    },
+    {
+        "id": 4,
+        "baslik": "Final Haftası Çalışma Alanları Açıldı",
+        "icerik": "Kütüphane sınav haftası boyunca 7/24 hizmet verecek.",
+        "detay": "Öğrencilerin sınav döneminde daha verimli çalışabilmesi için etüt salonları ve grup çalışma odaları gece boyunca açık olacak. Ayrıca ücretsiz çay ve kahve servisi sağlanacak.",
+        "resim": "4.duyuru.jpeg"
+      },
+      {
+        "id": 5,
+        "baslik": "Kitap Takas Günleri Başlıyor",
+        "icerik": "Kampüs içinde öğrenci kitap takası organizasyonu düzenleniyor.",
+        "detay": "Öğrenciler kullanmadıkları kitapları getirip, başkalarının kitaplarıyla değiştirme fırsatı yakalayacak. Etkinlik öğrenci kulüpleri iş birliğiyle düzenleniyor ve üç gün sürecek.",
+        "resim": "5.duyuru.jpeg"
+      },
+      {
+        "id": 6,
+        "baslik": "Yeni Gelen Kitaplar Raflarda!",
+        "icerik": "Kütüphane envanterine 300 yeni kitap eklendi.",
+        "detay": "Edebiyat, tarih, mühendislik ve psikoloji alanında toplam 300 yeni kitap öğrencilerin hizmetine sunuldu. Yeni gelenler rafında sergileniyor ve ödünç alınabiliyor.",
+        "resim": "6.duyuru.jpeg"
+      }
+      
+  ]
+  

@@ -10,6 +10,8 @@ import LoginPage from './Services/LoginPage.jsx';
 import AdminPage from './Services/AdminPage.jsx';
 import FAQ from './Services/FAQ.jsx';
 import BooksList from './BooksList';
+import Duyurular from './pages/duyurular/Duyurular';
+import DuyuruDetay from './pages/duyurular/DuyuruDetay';
 
 const router = createBrowserRouter([
   {
@@ -22,10 +24,13 @@ const router = createBrowserRouter([
       { path: 'login', element: <LoginPage /> },
       { path: 'admin', element: <AdminPage /> },
       { path: 'faq', element: <FAQ /> },
-      { path:'nadide-eserler', element: <BooksList/>}
+      { path:'nadide-eserler', element: <BooksList/>},
+      { path: 'duyurular', element: <Duyurular /> },
+      { path: 'duyurular/:id', element: <DuyuruDetay /> }
     ]
   }
 ]);
+
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
