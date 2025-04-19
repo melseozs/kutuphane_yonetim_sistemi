@@ -5,7 +5,7 @@ function LoginPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
+    <div className="flex items-center justify-center min-h-screen bg-neutral-50">
       <div className="bg-pink-50 p-8 rounded-lg shadow-lg w-120 h-96">
         <h2 className="text-2xl font-bold text-center mb-6">Giriş Yap</h2>
         <input 

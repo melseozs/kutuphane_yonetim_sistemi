@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 
 const OduncGeciktirme = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-neutral-50 min-h-screen">
       <Header />
       <div className="p-6 max-w-4xl mx-auto pt-34">
         <h1 className="text-3xl font-bold text-center mb-6 text-[#473636]">Gecikme Cezası Ödeme Bilgilendirmesi</h1>
