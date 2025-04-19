@@ -11,7 +11,7 @@ export default function About() {
         <main className="flex-1 p-10 bg-white rounded-lg shadow-sm m-4">
           <h1 className="text-3xl font-semibold text-[#633914] mb-4">Hakkımızda</h1>
           <p className="text-gray-700 leading-relaxed max-w-2xl">
-          İstanbul Sabahattin Zaim Üniversitesi (İZÜ) Kütüphanesi, Halkalı Kampüsü'nde merkezi bir konumda yer alır ve öğrencilere modern bir çalışma ortamı sunar. Kütüphane, basılı ve dijital kaynakların yanı sıra sessiz çalışma alanları, grup çalışma odaları ve bilgisayar erişimi gibi olanaklarla donatılmıştır. Ayrıca, üniversitenin akademik çıktıları dijital ortamda toplayan ve açık erişime sunan bir kurumsal arşiv sistemi de bulunmaktadır. 
+          Kütüphane,merkezi bir konumda yer alır ve öğrencilere modern bir çalışma ortamı sunar. Basılı ve dijital kaynakların yanı sıra sessiz çalışma alanları, grup çalışma odaları ve bilgisayar erişimi gibi çeşitli olanaklara sahiptir. Ayrıca, akademik çıktıları dijital ortamda toplayan ve açık erişime sunan bir kurumsal arşiv sistemi de bulunmaktadır.
           </p>
         </main>
       </div>
