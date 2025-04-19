@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.jpeg';
+
 
 function Header({ showSearch = false }) {
   return (
@@ -7,11 +9,11 @@ function Header({ showSearch = false }) {
       <div className="flex justify-between items-start">
         <div className="text-black text-xl font-bold">
           <div className="flex items-center space-x-3">
-            <img
-              src="src/assets/logo.jpeg"
-              alt="Logo"
-              className="h-16 w-16 rounded-lg ml-2.5"
-            />
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-16 w-16 rounded-lg ml-2.5"
+          />
             <span className="text-stone-600 text-xl font-semibold font-sans">
               KÜTÜPHANE YÖNETİM SİSTEMİ
             </span>

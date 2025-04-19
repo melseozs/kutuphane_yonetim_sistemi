@@ -12,6 +12,10 @@ import FAQ from './Services/FAQ.jsx';
 import BooksList from './BooksList';
 import Duyurular from './pages/duyurular/Duyurular';
 import DuyuruDetay from './pages/duyurular/DuyuruDetay';
+import VizyonMisyon from './pages/About/VizyonMisyon.jsx';
+import KutuphaneKural from './pages/About/KutuphaneKurallari.jsx';
+import CalismaSaatleri from './pages/About/CalismaSaatleri.jsx';
+import KutuphaneFoto from './pages/About/KutuphaneFoto.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +30,11 @@ const router = createBrowserRouter([
       { path: 'faq', element: <FAQ /> },
       { path:'nadide-eserler', element: <BooksList/>},
       { path: 'duyurular', element: <Duyurular /> },
-      { path: 'duyurular/:id', element: <DuyuruDetay /> }
+      { path: 'duyurular/:id', element: <DuyuruDetay /> },
+      { path: 'about/vizyon', element: <VizyonMisyon /> },
+      { path: 'about/kurallar', element: <KutuphaneKural /> },
+      { path: 'about/saatler', element: <CalismaSaatleri /> },
+      { path: 'about/foto', element: <KutuphaneFoto /> },
     ]
   }
 ]);
