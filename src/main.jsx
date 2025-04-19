@@ -9,6 +9,7 @@ import Contact from './pages/Contact.jsx';
 import LoginPage from './Services/LoginPage.jsx';
 import AdminPage from './Services/AdminPage.jsx';
 import FAQ from './Services/FAQ.jsx';
+import BooksList from './BooksList';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       { path: 'contact', element: <Contact /> },
       { path: 'login', element: <LoginPage /> },
       { path: 'admin', element: <AdminPage /> },
-      { path: 'faq', element: <FAQ /> }
+      { path: 'faq', element: <FAQ /> },
+      { path:'NadideEserler', element: <BooksList/>}
     ]
   }
 ]);
