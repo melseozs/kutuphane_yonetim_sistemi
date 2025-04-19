@@ -3,7 +3,7 @@ import { FaSave, FaTimes } from 'react-icons/fa';
 
 const KitapYonetimi = () => {
   return (
-    <div className="max-w-4xl mx-auto bg-white border border-gray-200 p-8 rounded-xl shadow-lg mt-10">
+    <div className="max-w-4xl mx-auto bg-white border border-gray-200 p-8 rounded-xl shadow-lg ">
       <h2 className="text-3xl font-bold mb-8 text-[#463C74] text-center border-b pb-4">📚 Kitap Ekle</h2>
 
       <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
