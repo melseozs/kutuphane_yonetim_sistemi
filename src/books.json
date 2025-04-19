@@ -1,4 +1,53 @@
 [
+  {
+    "id": 13,
+    "title": "Türk Dünya Ansiklopedisi",
+     "author": "Birçok Akademisyen",
+     "image": "https://img.kitapyurdu.com/v1/getImage/fn:72911/wh:true/wi:800"
+
+  },
+  {
+      "id": 14,
+      "title": "Shakespeare Sözlüğü",
+       "author": "Özdemir Nutku",
+       "image": "https://productimages.hepsiburada.net/s/7/375-375/9089597440050.jpg"
+  },
+  {
+    "id": 15,
+     "title": "Bilim Ve Sanat Terimileri Ansiklopedisi",
+     "author": "Tehanevi",
+     "image": "https://zerokitap.com/uploads/p/p/Bilim-ve-Sanat-Terimleri-Ansiklopedisi_1.png?v=1712300089"
+  },
+  {
+    "id": 16,
+    "title": "Arkeoleji Sözlüğü",
+    "author": "Secda Altuk",
+    "image": "https://zerokitap.com/uploads/p/p/Arkeoloji-Sozlugu_1.png?v=1711355318"
+  },
+  {
+    "id": 17,
+    "title": "Cambridge Anceint History",
+    "author": "Peter Garnsey, Averil Cameron",
+    "image": "https://zerokitap.com/uploads/p/p/Cambridge-Ancient-History-V13_1.jpg?v=1701176686"
+  },
+  {
+    "id": 18,
+    "title": "Osmanlıca - Türkçe Ansiklopedik Lügat",
+    "author": "Ferit Devellioğlu",
+    "image": "https://zerokitap.com/uploads/p/p/osmanlica-turkce-ansiklopedik-lugat16782750480jpeg_1.jpeg"
+  },
+  {
+    "id": 19,
+    "title": "Tarihi ve Etimolojik Türkiye Türkçesi Lugati 8 Cilt",
+    "author": "Nurettin Demir, Emine Yılmaz",
+    "image": "https://zerokitap.com/uploads/p/p/Tarihi-ve-Etimolojik-Turkiye-Turkcesi-Lugati-8-Cilt_1.png?v=1699532352"
+  },
+  {
+    "id": 20,
+    "title": "Antropoloji Sözlüğü",
+    "author": "Aydın, Kudret Emiroğlu, Suavi",
+    "image": "https://zerokitap.com/uploads/p/p/antropoloji_sozlugupng_1.png"
+  },
     {
       "id": 1,
       "title": "Bedrettin Destanı",
@@ -70,55 +119,6 @@
       "title": "Kuyucaklı Yusuf",
       "author": "Sabahattin Ali",
       "image": "data:image/jpeg;base64,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"
-    },
-    {
-      "id": 13,
-      "title": "Türk Dünya Ansiklopedisi",
-       "author": "Birçok Akademisyen",
-       "image": "https://img.kitapyurdu.com/v1/getImage/fn:72911/wh:true/wi:800"
-
-    },
-    {
-        "id": 14,
-        "title": "Shakespeare Sözlüğü",
-         "author": "Özdemir Nutku",
-         "image": "https://productimages.hepsiburada.net/s/7/375-375/9089597440050.jpg"
-    },
-    {
-      "id": 15,
-       "title": "Bilim Ve Sanat Terimileri Ansiklopedisi",
-       "author": "Tehanevi",
-       "image": "https://zerokitap.com/uploads/p/p/Bilim-ve-Sanat-Terimleri-Ansiklopedisi_1.png?v=1712300089"
-    },
-    {
-      "id": 16,
-      "title": "Arkeoleji Sözlüğü",
-      "author": "Secda Altuk",
-      "image": "https://zerokitap.com/uploads/p/p/Arkeoloji-Sozlugu_1.png?v=1711355318"
-    },
-    {
-      "id": 17,
-      "title": "Cambridge Anceint History",
-      "author": "Peter Garnsey, Averil Cameron",
-      "image": "https://zerokitap.com/uploads/p/p/Cambridge-Ancient-History-V13_1.jpg?v=1701176686"
-    },
-    {
-      "id": 18,
-      "title": "Osmanlıca - Türkçe Ansiklopedik Lügat",
-      "author": "Ferit Devellioğlu",
-      "image": "https://zerokitap.com/uploads/p/p/osmanlica-turkce-ansiklopedik-lugat16782750480jpeg_1.jpeg"
-    },
-    {
-      "id": 19,
-      "title": "Tarihi ve Etimolojik Türkiye Türkçesi Lugati 8 Cilt",
-      "author": "Nurettin Demir, Emine Yılmaz",
-      "image": "https://zerokitap.com/uploads/p/p/Tarihi-ve-Etimolojik-Turkiye-Turkcesi-Lugati-8-Cilt_1.png?v=1699532352"
-    },
-    {
-      "id": 20,
-      "title": "Antropoloji Sözlüğü",
-      "author": "Aydın, Kudret Emiroğlu, Suavi",
-      "image": "https://zerokitap.com/uploads/p/p/antropoloji_sozlugupng_1.png"
     }
     
 
