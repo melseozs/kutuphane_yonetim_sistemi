@@ -13,7 +13,7 @@ import FAQ from './Services/FAQ.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />, // 
+    element: <App />, 
     children: [
       { index: true, element: <Anasayfa /> },
       { path: 'about', element: <About /> },

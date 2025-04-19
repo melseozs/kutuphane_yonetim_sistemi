@@ -19,7 +19,7 @@ function Anasayfa() {
   return (
     <>
       <Header showSearch={true} /> 
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center pt-32">
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center pt-15 pb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full px-6 pt-48">
           {services.map((service, index) => (
             <div
