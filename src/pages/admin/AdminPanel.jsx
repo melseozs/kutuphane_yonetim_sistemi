@@ -1,13 +1,6 @@
 import React from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import {
-  FaHome,
-  FaBook,
-  FaUsersCog,
-  FaChartBar,
-  FaSync,
-  FaSignOutAlt
-} from "react-icons/fa";
+import { FaHome, FaBook, FaUsersCog, FaChartBar, FaSync, FaSignOutAlt, FaUsers } from "react-icons/fa";
 
 const AdminPanel = () => {
   const location = useLocation();
@@ -19,6 +12,9 @@ const AdminPanel = () => {
     { label: 'Kitap Yönetimi', path: '/admin-panel/kitap-yonetimi', icon: <FaBook /> },
     { label: 'Kullanıcı Yönetimi', path: '/admin-panel/kullanici-yonetimi', icon: <FaUsersCog /> },
     { label: 'İstatistikler', path: '/admin-panel/istatistikler', icon: <FaChartBar /> },
+    { label: 'Üye Kayıtları', path: '/admin-panel/uye-kayitlari', icon: <FaUsers /> },
+    { label: 'Hareketler', path: '/admin-panel/hareketler', icon: <FaSync /> },
+
   ];
 
   const handleLogout = () => {

@@ -2,32 +2,33 @@ import React from 'react';
 import { FaBook, FaUserFriends, FaBookOpen, FaCheckCircle } from 'react-icons/fa';
 
 const Istatistikler = () => {
+  // Gerçek veritabanına bağlandığında bunlar API'den gelecek
   const toplamKitap = 120;
-  const toplamKullanici = 48;
   const oduncVerilen = 35;
   const mevcuttaMusait = toplamKitap - oduncVerilen;
+  const toplamUye = 48;
 
   const stats = [
     {
-      title: 'Toplam Kitap',
+      title: '📚 Toplam Kitap',
       value: toplamKitap,
       icon: <FaBook className="text-4xl text-[#6b5ca5]" />,
       bg: 'from-[#f4efff] to-[#e4dafb]'
     },
     {
-      title: 'Toplam Kullanıcı',
-      value: toplamKullanici,
+      title: '👥 Toplam Üye',
+      value: toplamUye,
       icon: <FaUserFriends className="text-4xl text-[#a25c92]" />,
       bg: 'from-[#ffeef7] to-[#fbd8e9]'
     },
     {
-      title: 'Ödünç Verilen',
+      title: '📖 Ödünç Verilen',
       value: oduncVerilen,
       icon: <FaBookOpen className="text-4xl text-[#f59e0b]" />,
       bg: 'from-[#fff7e8] to-[#ffeccc]'
     },
     {
-      title: 'Müsait Kitap',
+      title: '✅ Müsait Kitap',
       value: mevcuttaMusait,
       icon: <FaCheckCircle className="text-4xl text-[#10b981]" />,
       bg: 'from-[#e8fff5] to-[#ccf0e6]'

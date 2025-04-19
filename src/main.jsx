@@ -19,6 +19,8 @@ import KitapYonetimi from './pages/admin/KitapYonetimi.jsx';
 import KullaniciYonetimi from './pages/admin/KullaniciYonetimi.jsx';
 import Istatistikler from './pages/admin/İstatistikler.jsx';
 import OduncYonetimi from './pages/admin/OduncYonetimi'; 
+import UyeKayitlari from './pages/admin/UyeKayitlari.jsx';
+import Hareketler from './pages/admin/Hareketler.jsx';
 
 
 import VizyonMisyon from './pages/About/VizyonMisyon.jsx';
@@ -56,6 +58,8 @@ const router = createBrowserRouter([
       { path: 'kullanici-yonetimi', element: <KullaniciYonetimi /> },
       { path: 'istatistikler', element: <Istatistikler /> },
       { path: 'odunc-yonetimi', element: <OduncYonetimi /> },
+      { path: 'uye-kayitlari', element: <UyeKayitlari /> },
+      { path: 'hareketler', element: <Hareketler /> },
 
     ],
   },
