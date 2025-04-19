@@ -21,7 +21,7 @@ function Anasayfa() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-gray-50 via-amber-50 to-yellow-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center flex flex-col justify-center items-center mb-6 "
+              className="bg-gradient-to-r from-gray-50 via-amber-50 to-yellow-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center flex flex-col justify-center items-center mb-6"
             >
               <Link to={service.link}>
                 <div className="flex justify-center mb-6">
@@ -31,7 +31,7 @@ function Anasayfa() {
                     className="w-24 h-24 rounded-lg border-3 border-[#54514b]"
                   />
                 </div>
-                <p className="text-gray-800 hover:text-[#35312e] font-semibold font-sans p-3 text-lg">
+                <p className="text-gray-800 hover:text-[#35312e] font-semibold p-3 text-lg">
                   {service.title}
                 </p>
               </Link>
@@ -39,6 +39,7 @@ function Anasayfa() {
           ))}
         </div>
       </div>
+
       <section className="p-10 bg-white min-h-screen">
         <h2 className="text-3xl font-bold text-center text-[#463C74] mb-12">Duyurular</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -63,7 +64,7 @@ function Anasayfa() {
         <div className="mt-10 text-center">
           <Link
             to="/duyurular"
-            className="inline-block bg-[#7858A6] text-white px-6 py-2 rounded-full hover:bg-[#5e3c9d] transition"
+            className="inline-block bg-[#EDD6CA] text-white px-6 py-2 rounded-full hover:bg-[#DFC2B5] transition"
           >
             Tüm Duyuruları Gör
           </Link>
