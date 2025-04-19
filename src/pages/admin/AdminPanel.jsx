@@ -14,8 +14,8 @@ const AdminPanel = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { label: 'Ödünç Yönetimi', path: '/admin-panel/odunc-yonetimi', icon: <FaSync /> },
     { label: 'Ana Sayfa', path: '/', icon: <FaHome /> },
+    { label: 'Ödünç Yönetimi', path: '/admin-panel/odunc-yonetimi', icon: <FaSync /> },
     { label: 'Kitap Yönetimi', path: '/admin-panel/kitap-yonetimi', icon: <FaBook /> },
     { label: 'Kullanıcı Yönetimi', path: '/admin-panel/kullanici-yonetimi', icon: <FaUsersCog /> },
     { label: 'İstatistikler', path: '/admin-panel/istatistikler', icon: <FaChartBar /> },
