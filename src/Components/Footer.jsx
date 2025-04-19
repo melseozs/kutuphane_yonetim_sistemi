@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FAEEE7] text-gray-700 px-4 py-8 mt-16 shadow-inner rounded-t-2xl">
+    <footer className="bg-[#fffded] text-gray-700 px-4 py-8 mt-16 shadow-inner rounded-t-2xl">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <h3 className="text-xl font-bold">Booksy Kütüphane Yönetim Sistemi</h3>
@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="w-full md:w-1/2 h-48">
           <iframe
             title="Kütüphane Harita"
-            className="w-full h-full rounded-xl border border-gray-300"
+            className="w-full h-full rounded-xl border border-gray-700"
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"

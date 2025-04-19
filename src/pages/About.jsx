@@ -1,59 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
+import React from "react";
 import Header from '../Components/Header'; 
+import {
+  HiHome,
+  HiBookOpen,
+  HiInformationCircle,
+  HiClipboardList,
+  HiClock,
+  HiCamera
+} from "react-icons/hi";
 
 export default function About() {
   return (
-    <div className="bg-white min-h-screen p-10">
-      <Header showSearch={false} />
-
-      <h1 className="text-4xl font-bold text-center text-gray-800 mt-18 mb-8">
-        Hakkımızda
-      </h1>
-
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          Kütüphane Yönetim Sistemi, bilgiye erişimi kolaylaştırmak, kitapları ve kaynakları
-          düzenlemek, kullanıcılarımıza modern ve hızlı bir kütüphane deneyimi sunmak amacıyla
-          geliştirilmiştir. Amacımız, herkesin bilgiye eşit erişimini sağlamak ve kitap okuma
-          alışkanlıklarını desteklemektir.
-        </p>
-
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          Sistemimiz, kullanıcıların hızlıca kitap ödünç almasını, iade işlemlerini yapmasını ve
-          kütüphanemizde bulunan kaynakları kolayca bulmasını sağlamaktadır. Aynı zamanda,
-          yöneticilerimize, kütüphanedeki envanteri yönetme, raporlama ve analitik araçlarla
-          verimliliği artırma imkânı sunar.
-        </p>
-
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          Teknolojinin gücünü kullanarak kütüphane hizmetlerini dijitalleştiriyor ve
-          kullanıcılarımızın hayatlarını kolaylaştırıyoruz. Yenilikçi özelliklerimizle birlikte,
-          kütüphanemiz, her yaştan bireye daha fazla okuma fırsatı sunmaktadır.
-        </p>
-
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">Misyonumuz</h2>
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          Bilgiye erişimi kolaylaştırmak ve toplumun bilgiye olan bağlılığını artırmak. Amacımız,
-          yalnızca kitapları yönetmek değil, aynı zamanda insanların öğrenme ve keşfetme
-          alışkanlıklarını güçlendirmektir.
-        </p>
-
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">Vizyonumuz</h2>
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          Geleceğin dijital kütüphanelerini inşa ederek herkesin bilgiye erişebildiği, yenilikçi
-          ve sürdürülebilir bir platform sunmak.
-        </p>
-
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">Değerlerimiz</h2>
-        <ul className="list-disc list-inside text-lg text-gray-700 leading-relaxed">
-          <li>Bilgiye erişimde eşitlik</li>
-          <li>Teknolojiyle modernleşme</li>
-          <li>Toplumsal fayda ve eğitim</li>
-          <li>Yenilikçi ve sürdürülebilir çözümler</li>
-          <li>Kullanıcı odaklı hizmet</li>
-        </ul>
+    <>
+      <Header />
+      <div className="flex min-h-screen bg-[#f5eded] pt-24">
+        <div className="w-64 h-screen bg-gradient-to-b from-gray-50 via-orange-50 to-yellow-50 p-6 shadow-md pt-12">
+          <h2 className="text-2xl font-semibold text-[#633914] mb-8">Kütüphane Hakkında</h2>
+          <nav className="space-y-4 pt-4">
+            <a href="/kitaplar" className="flex items-center gap-3 text-[#615d57] hover:text-gray-700 transition">
+              <HiBookOpen size={20} /> Vizyon & Misyon
+            </a>
+            <a href="/kurallar" className="flex items-center gap-3 text-[#615d57] hover:text-gray-700 transition">
+              <HiClipboardList size={20} /> Kütüphane Kuralları
+            </a>
+            <a href="/saatler" className="flex items-center gap-3 text-[#615d57] hover:text-gray-700 transition">
+              <HiClock size={20} /> Çalışma Saatleri
+            </a>
+            <a href="/galeri" className="flex items-center gap-3 text-[#615d57] hover:text-gray-700 transition">
+              <HiCamera size={20} /> Fotoğraflar
+            </a>
+            <a href="/" className="flex items-center gap-3 text-[#615d57] hover:text-gray-700 transition">
+              <HiHome size={20} /> Anasayfa
+            </a>
+          </nav>
+        </div>
+        <main className="flex-1 p-10 bg-white rounded-lg shadow-sm m-4">
+          <h1 className="text-3xl font-semibold text-[#633914] mb-4">Hakkımızda</h1>
+          <p className="text-gray-700 leading-relaxed max-w-2xl">
+           İstanbul Sabahattin Zaim Üniversitesi (İZÜ) Kütüphanesi, Halkalı Kampüsü'nde merkezi bir konumda yer alır ve öğrencilere modern bir çalışma ortamı sunar. Kütüphane, basılı ve dijital kaynakların yanı sıra sessiz çalışma alanları, grup çalışma odaları ve bilgisayar erişimi gibi olanaklarla donatılmıştır. 
+          </p>
+        </main>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
-import Header from '../Components/Header'; 
-import Duyurular from '../Components/Duyurular'; 
+import { Link } from 'react-router-dom';
+import Header from '../Components/Header';
+import Duyurular from '../Components/Duyurular';
 
 function Anasayfa() {
   const services = [
@@ -19,25 +19,25 @@ function Anasayfa() {
 
   return (
     <>
-      <Header showSearch={true} /> 
+      <Header showSearch={true} />
 
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center pt-15 pb-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full px-6 pt-48">
+      <div className="min-h-screen bg-[#ffff] flex flex-col items-center justify-center pt-48 pb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full px-6 pt-12">
           {services.map((service, index) => (
             <div
               key={index}
               onClick={() => handleServiceClick(service.path)}
-              className="bg-orange-50 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 text-center flex flex-col justify-center items-center mb-4"
+              className="bg-gradient-to-r from-gray-50 via-amber-50 to-yellow-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center flex flex-col justify-center items-center mb-6 border border-gray-300"
             >
               <Link to={service.link}>
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-6">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-30 h-30 rounded-lg border-3 border-amber-950"
+                    className="w-24 h-24 rounded-lg border-3 border-[#54514b]"
                   />
                 </div>
-                <p className="text-black hover:text-amber-900 font-semibold font-sans p-3 text-xl">
+                <p className="text-gray-800 hover:text-[#35312e] font-semibold font-sans p-3 text-lg">
                   {service.title}
                 </p>
               </Link>
@@ -45,8 +45,6 @@ function Anasayfa() {
           ))}
         </div>
       </div>
-
-      {/*  Duyurular bileşeni burada */}
       <Duyurular />
     </>
   );
