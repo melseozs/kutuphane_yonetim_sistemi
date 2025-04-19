@@ -72,7 +72,7 @@ function Header({ showSearch = false }) {
             <input
               type="text"
               placeholder="Arama yap..."
-              className="w-full p-3 text-lg rounded-l-lg border-2 rounded-2xl border-stone-700 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300 transition duration-300"
+              className="w-full p-3 text-lg rounded-l-lg border-2 rounded-2xl border-stone-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-200 transition duration-300"
             />
             <button className="text-black px-4 py-3 rounded-r-lg bg-white hover:bg-gray-100 transition duration-300 border-stone-700 h-13 w-20 shadow-sm hover:shadow-md">
               Ara

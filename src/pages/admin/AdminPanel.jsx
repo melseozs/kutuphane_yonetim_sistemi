@@ -7,8 +7,8 @@ const AdminPanel = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { label: 'Ödünç Yönetimi', path: '/admin-panel/odunc-yonetimi', icon: <FaSync /> },
     { label: 'Ana Sayfa', path: '/', icon: <FaHome /> },
+    { label: 'Ödünç Yönetimi', path: '/admin-panel/odunc-yonetimi', icon: <FaSync /> },
     { label: 'Kitap Yönetimi', path: '/admin-panel/kitap-yonetimi', icon: <FaBook /> },
     { label: 'Kullanıcı Yönetimi', path: '/admin-panel/kullanici-yonetimi', icon: <FaUsersCog /> },
     { label: 'İstatistikler', path: '/admin-panel/istatistikler', icon: <FaChartBar /> },
@@ -24,8 +24,7 @@ const AdminPanel = () => {
 
   return (
     <div className="flex min-h-screen font-sans bg-gradient-to-r from-[#fff8f1] to-[#ffece6]">
-      {/* SOL MENÜ */}
-      <div className="w-64 bg-white border-r shadow-lg p-6 flex flex-col justify-between">
+      <div className="w-64 bg-gradient-to-b from-gray-50 via-orange-50 to-yellow-50 border-r shadow-lg p-6 flex flex-col justify-between">
         <div>
           <h2 className="text-2xl font-bold text-[#463C74] mb-8">📚 Admin Paneli</h2>
           <ul className="space-y-3">
@@ -46,8 +45,6 @@ const AdminPanel = () => {
             ))}
           </ul>
         </div>
-
-        {/* ÇIKIŞ */}
         <button
           onClick={handleLogout}
           className="mt-10 flex items-center gap-2 text-red-500 hover:text-red-700 text-sm hover:scale-105 transition"
@@ -56,8 +53,6 @@ const AdminPanel = () => {
           Çıkış Yap
         </button>
       </div>
-
-      {/* SAĞ İÇERİK */}
       <div className="flex-grow p-10 bg-white shadow-inner rounded-l-3xl">
         <Outlet />
       </div>
