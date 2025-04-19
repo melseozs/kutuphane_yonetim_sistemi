@@ -13,7 +13,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <div className="flex min-h-screen bg-[#f5eded] pt-24">
+      <div className="flex min-h-screen bg-[#fffded] pt-24">
         <div className="w-64 h-screen bg-gradient-to-b from-gray-50 via-orange-50 to-yellow-50 p-6 shadow-md pt-12">
           <h2 className="text-2xl font-semibold text-[#633914] mb-8">Kütüphane Hakkında</h2>
           <nav className="space-y-4 pt-4">

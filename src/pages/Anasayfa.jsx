@@ -21,7 +21,7 @@ function Anasayfa() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-orange-50 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 text-center flex flex-col justify-center items-center mb-4"
+              className="bg-gradient-to-r from-gray-50 via-amber-50 to-yellow-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center flex flex-col justify-center items-center mb-6 "
             >
               <Link to={service.link}>
                 <div className="flex justify-center mb-6">
