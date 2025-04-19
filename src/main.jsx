@@ -16,6 +16,8 @@ import VizyonMisyon from './pages/About/VizyonMisyon.jsx';
 import KutuphaneKural from './pages/About/KutuphaneKurallari.jsx';
 import CalismaSaatleri from './pages/About/CalismaSaatleri.jsx';
 import KutuphaneFoto from './pages/About/KutuphaneFoto.jsx';
+import SalonCalismalanlari from './pages/SalonCalismalanlari.jsx';
+import OduncGeciktirme from './pages/OduncGeciktirme.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,7 @@ const router = createBrowserRouter([
       { path: 'login', element: <LoginPage /> },
       { path: 'admin', element: <AdminPage /> },
       { path: 'faq', element: <FAQ /> },
+      { path: 'odunc-geciktirme', element: <OduncGeciktirme/> },
       { path:'nadide-eserler', element: <BooksList/>},
       { path: 'duyurular', element: <Duyurular /> },
       { path: 'duyurular/:id', element: <DuyuruDetay /> },
@@ -35,6 +38,7 @@ const router = createBrowserRouter([
       { path: 'about/kurallar', element: <KutuphaneKural /> },
       { path: 'about/saatler', element: <CalismaSaatleri /> },
       { path: 'about/foto', element: <KutuphaneFoto /> },
+      { path:'calisma-alanlari', element: <SalonCalismalanlari/>},
     ]
   }
 ]);

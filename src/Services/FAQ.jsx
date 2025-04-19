@@ -1,44 +1,43 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import Header from '../Components/Header';
 
 const faqData = [
   {
     question: 'Kütüphaneyi kimler kullanabilir?',
-    answer: 'Bu kurum çatısı altında ki herkes.'
+    answer: 'Kütüphane, üniversite öğrencileri, akademik ve idari personel ile mezunlar tarafından kullanılabilir.'
   },
   {
     question: 'Kütüphaneye nasıl üye olabilirim?',
-    answer: 'Kullanıcı girişi sayfasında bulunan üye ol butonundan.'
+    answer: 'Kullanıcı girişi sayfasında bulunan "Üye Ol" butonunu kullanarak üyelik işlemini tamamlayabilirsiniz.'
   },
   {
     question: 'Kişisel bilgilerim değişti ne yapmam gerekiyor?',
-    answer: 'Admine mail ile ulaşabilirsiniz.'
+    answer: 'Bilgilerinizde bir değişiklik olduğunda admin ile e-posta yoluyla iletişime geçebilirsiniz.'
   },
   {
     question: 'Kitap alma-iade işlemini nasıl yapabilirim?',
-    answer: 'Ana Sayfada bulunan ödünç ve iade işlemlerinden yapabilirsiniz.'
+    answer: 'Kitap alma ve iade işlemleri için kütüphaneye gelip işlemlerinizi gerçekleştirmeniz gerekmektedir.'
   },
   {
     question: 'Kütüphane çalışma saatleri nedir?',
-    answer: 'Kütüphane hafta içi 08:00 - 22:00, hafta sonu 10:00 - 18:00 saatleri arasında açıktır.'
+    answer: 'Kütüphane hafta içi 08:00 - 22:00, hafta sonu ise 10:00 - 18:00 saatleri arasında hizmet vermektedir.'
   },
   {
     question: 'Ödünç aldığım kitabı kaybedersem ne yapmalıyım?',
-    answer: 'Kaybolan kitapların yerine aynı kitabı temin etmeniz veya kütüphaneye bildirimde bulunmanız gerekmektedir.'
+    answer: 'Kaybolan kitaplar için aynı kitabı temin etmeniz ya da durumu kütüphaneye bildirmeniz gerekir.'
   },
   {
     question: 'Bir kitabı ne kadar süreyle ödünç alabilirim?',
-    answer: 'Öğrenciler için 15 gün, akademik personel için 30 gün süreyle ödünç alma hakkı bulunmaktadır.'
+    answer: 'Öğrenciler 15 gün, akademik personel ise 30 gün boyunca kitap ödünç alabilir.'
   },
   {
     question: 'Kütüphanede sessizlik kuralı var mı?',
-    answer: 'Evet, kütüphane sessiz bir çalışma ortamı sağlamak amacıyla sessizlik kuralına sahiptir.'
+    answer: 'Evet, kütüphane içerisinde sessiz bir ortam sağlanması amacıyla sessizlik kuralı uygulanmaktadır.'
   }
 ];
 
 function FAQ() {
-  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAnswer = (index) => {
@@ -47,28 +46,24 @@ function FAQ() {
 
   return (
     <>
-      <Header showSearch={false} /> 
-      <div className="min-h-screen bg-orange-50 flex items-center justify-center p-6 pt-36">
-        <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
-          <h2 className="text-3xl font-bold text-center mb-6 text-black">Sıkça Sorulan Sorular</h2>
-          <div className="divide-y divide-pink-100">
-            {faqData.map((item, index) => (
-              <div key={index} className="py-4">
-                <button
-                  onClick={() => toggleAnswer(index)}
-                  className="w-full text-left font-semibold text-lg p-3 bg-gray-200 text-black rounded-md hover:bg-gray-100 transition flex justify-between items-center"
-                >
-                  {item.question}
-                  <span>{openIndex === index ? '−' : '+'}</span>
-                </button>
-                {openIndex === index && (
-                  <div className="mt-2 p-3 bg-pink-50 text-black rounded-md">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+      <Header showSearch={false} />
+      <div className="pt-36 pb-20 px-6 bg-neutral-50 min-h-screen">
+        <h2 className="text-4xl font-bold text-center text-[#473636] mb-12">Sıkça Sorulan Sorular</h2>
+        <div className="space-y-6 max-w-3xl mx-auto">
+          {faqData.map((item, index) => (
+            <div key={index} className="border-b border-gray-300 pb-4">
+              <button
+                onClick={() => toggleAnswer(index)}
+                className="w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800 hover:text-gray-600 transition"
+              >
+                {item.question}
+                {openIndex === index ? <ChevronUp size={22} /> : <ChevronDown size={22} />}
+              </button>
+              {openIndex === index && (
+                <p className="mt-2 text-gray-700 text-base">{item.answer}</p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </>

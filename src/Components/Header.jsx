@@ -42,13 +42,16 @@ function Header({ showSearch = false }) {
                 <Link to="/admin" className="text-black text-lg">Yönetici İşlemleri</Link>
               </div>
               <div className="p-4 hover:bg-orange-50 transition duration-300">
-                <Link to="/odunc-ve-iade" className="text-black text-lg">Ödünç ve İade</Link>
+                <Link to="/odunc-geciktirme" className="text-black text-lg">Ödünç Geciktirme Ücretleri</Link>
               </div>
               <div className="p-4 hover:bg-orange-50 transition duration-300">
                 <Link to="/nadide-eserler" className="text-black text-lg">Nadide Eserler</Link>
               </div>
               <div className="p-4 hover:bg-orange-50 transition duration-300">
                 <Link to="/katalog" className="text-black text-lg">Online Katalog</Link>
+              </div>
+              <div className="p-4 hover:bg-orange-50 transition duration-300">
+                <Link to="/calisma-alanlari" className="text-black text-lg">Salonlar ve Çalışma Alanları</Link>
               </div>
             </div>
           </div>
