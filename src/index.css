@@ -20,7 +20,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: #cfe3e1; 
+  background-color: rgba(207, 227, 225, 0.7); 
   display: block; 
 }
 

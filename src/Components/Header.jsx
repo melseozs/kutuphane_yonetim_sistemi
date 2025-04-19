@@ -4,7 +4,7 @@ import logo from '../assets/logo.jpeg';
 
 function Header({ showSearch = false }) {
   return (
-    <header className="bg-[#fffded] w-full fixed top-0 left-0 z-10 p-4 shadow-lg">
+    <header className="bg-gradient-to-b from-gray-100 via-orange-50 to-yellow-50 p-3  shadow-md w-full fixed top-0 left-0 z-10">
       <div className="flex justify-between items-start">
         <div className="text-black text-xl font-bold">
           <div className="flex items-center space-x-3">
@@ -67,7 +67,7 @@ function Header({ showSearch = false }) {
         </nav>
       </div>
       {showSearch && (
-        <div className="w-full bg-[#cfe3e1] py-4 mt-4">
+        <div className="w-full bg-[rgba(207,227,225,0.7)] py-4 mt-4">
           <div className="max-w-4xl mx-auto flex items-center space-x-2">
             <input
               type="text"

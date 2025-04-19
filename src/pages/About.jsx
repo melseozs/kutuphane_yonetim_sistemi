@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <div className="flex min-h-screen bg-[#fffded] pt-24">
+      <div className="flex min-h-screen bg-neutral-50 pt-24">
         <Sidebar />
         <main className="flex-1 p-10 bg-white rounded-lg shadow-sm m-4">
           <h1 className="text-3xl font-semibold text-[#633914] mb-4">Hakkımızda</h1>
