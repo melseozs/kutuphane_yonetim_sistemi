@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       { path: 'login', element: <LoginPage /> },
       { path: 'admin', element: <AdminPage /> },
       { path: 'faq', element: <FAQ /> },
-      { path:'NadideEserler', element: <BooksList/>}
+      { path:'nadide-eserler', element: <BooksList/>}
     ]
   }
 ]);
