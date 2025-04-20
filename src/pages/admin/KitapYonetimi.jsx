@@ -4,7 +4,9 @@ import { FaSave, FaTimes } from 'react-icons/fa';
 const KitapYonetimi = () => {
   return (
     <div className="max-w-4xl mx-auto bg-white border border-gray-200 p-8 rounded-xl shadow-lg ">
-      <h2 className="text-3xl font-bold mb-8 text-[#463C74] text-center border-b pb-4">📚 Kitap Ekle</h2>
+      <h2 className="text-3xl font-bold mb-8 text-[#463C74] text-center border-b pb-4">
+        📚 Kitap Ekle
+      </h2>
 
       <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -16,7 +18,7 @@ const KitapYonetimi = () => {
 
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">ISBN</label>
-          <input name="isbn" type="text" placeholder="978-..." 
+          <input name="isbn" type="text" placeholder="978-..."
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
         </div>
 
@@ -36,42 +38,68 @@ const KitapYonetimi = () => {
 
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">Yazar Adı</label>
-          <input name="yazarAdi" type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
+          <input name="yazarAdi" type="text"
+            className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
         </div>
 
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">Yazar Soyadı</label>
-          <input name="yazarSoyadi" type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
+          <input name="yazarSoyadi" type="text"
+            className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
         </div>
 
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">Yayıncı</label>
-          <input name="yayinci" type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
+          <input name="yayinci" type="text"
+            className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
         </div>
 
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">Kategori Adı</label>
-          <input name="kategori" type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
+          <input name="kategori" type="text"
+            className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
         </div>
 
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">Dosya No</label>
-          <input name="dosyaNo" type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
+          <input name="dosyaNo" type="text"
+            className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
+        </div>
+
+        {/* Kitap Görseli (Buton gibi) */}
+        <div>
+          <label className="block font-semibold text-sm mb-1 text-gray-700">Kitap Görseli</label>
+          <label
+            htmlFor="foto"
+            className="w-full flex items-center justify-center gap-2 border border-dashed border-gray-400 rounded-lg p-4 cursor-pointer bg-[#fff8f1] text-gray-600 hover:bg-[#fde2bc] transition duration-200"
+          >
+            📷 Görsel Seç
+          </label>
+          <input
+            id="foto"
+            name="foto"
+            type="file"
+            accept="image/*"
+            className="hidden"
+          />
         </div>
 
         {/* Butonlar */}
         <div className="md:col-span-2 flex justify-end gap-4 pt-6">
           <button
             type="submit"
-            className="flex items-center gap-2 bg-[#fdd9a0] text-black px-5 py-2 rounded-lg hover:bg-[#fcb96e] transition shadow"
+            className="flex items-center gap-2 bg-[#fdd9a0] text-black px-6 py-2 rounded-lg shadow-md hover:shadow-lg hover:bg-[#fcb96e] border border-[#e0a35c] transition duration-200"
           >
-            <FaSave /> Kaydet
+            <FaSave className="text-md" />
+            <span className="font-medium">Kaydet</span>
           </button>
+
           <button
             type="button"
-            className="flex items-center gap-2 bg-gray-100 border border-gray-400 text-gray-700 px-5 py-2 rounded-lg hover:bg-gray-200 transition"
+            className="flex items-center gap-2 bg-white text-gray-700 px-6 py-2 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 border border-gray-400 transition duration-200"
           >
-            <FaTimes /> İptal
+            <FaTimes className="text-md" />
+            <span className="font-medium">İptal</span>
           </button>
         </div>
 
