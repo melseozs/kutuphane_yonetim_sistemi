@@ -34,15 +34,17 @@ const OduncYonetimi = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg mt-10">
-      <h2 className="text-3xl font-bold text-center text-[#463C74] border-b pb-4 mb-8">📚 Ödünç Verme Sayfası</h2>
+    <div className="max-w-6xl mx-auto bg-gradient-to-br from-[#fff8f1] to-[#ffece6] p-10 rounded-2xl shadow-xl mt-10 border border-gray-200">
+      <h2 className="text-3xl font-bold text-center text-[#463C74] border-b pb-6 mb-10">
+        📚 Ödünç Verme Sayfası
+      </h2>
 
       {/* Ödünç Formu */}
-      <div className="mb-8 flex flex-col md:flex-row gap-4 items-center">
+      <div className="mb-10 flex flex-col md:flex-row gap-4 items-center justify-center">
         <select
           value={secilenKitapId}
           onChange={(e) => setSecilenKitapId(e.target.value)}
-          className="border px-4 py-2 rounded w-full md:w-1/3"
+          className="border border-gray-300 px-4 py-2 rounded-lg w-full md:w-1/3 focus:ring focus:ring-[#fdd9a0]"
         >
           <option value="">📖 Müsait Kitap Seç</option>
           {kitaplar
@@ -53,16 +55,18 @@ const OduncYonetimi = () => {
               </option>
             ))}
         </select>
+
         <input
           type="text"
           placeholder="Öğrenci Adı"
           value={ogrenciAdi}
           onChange={(e) => setOgrenciAdi(e.target.value)}
-          className="border px-4 py-2 rounded w-full md:w-1/3"
+          className="border border-gray-300 px-4 py-2 rounded-lg w-full md:w-1/3 focus:ring focus:ring-[#fdd9a0]"
         />
+
         <button
           onClick={handleOduncVer}
-          className="bg-[#fdd9a0] text-black px-4 py-2 rounded hover:bg-[#fcb96e] flex items-center gap-2"
+          className="bg-[#fdd9a0] hover:bg-[#fcb96e] text-black px-5 py-2 rounded-lg font-medium flex items-center gap-2 shadow transition"
         >
           <FaPlusCircle />
           Ödünç Ver
@@ -70,22 +74,26 @@ const OduncYonetimi = () => {
       </div>
 
       {/* Kitap Listesi */}
-      <table className="w-full table-auto border-collapse">
-        <thead>
-          <tr className="bg-[#fdd9a0] text-left">
-            <th className="p-3">Kitap Adı</th>
-            <th className="p-3">Yazar</th>
-            <th className="p-3">Durum</th>
-            <th className="p-3">Alan Kişi</th>
-            <th className="p-3">İşlem</th>
+      <table className="w-full table-auto border-collapse shadow-sm rounded overflow-hidden bg-white">
+        <thead className="bg-[#fdd9a0] text-[#463C74] text-left">
+          <tr>
+            <th className="p-3">📘 Kitap Adı</th>
+            <th className="p-3">✍️ Yazar</th>
+            <th className="p-3">📌 Durum</th>
+            <th className="p-3">👤 Alan Kişi</th>
+            <th className="p-3">🔁 İşlem</th>
           </tr>
         </thead>
         <tbody>
           {kitaplar.map((kitap) => (
-            <tr key={kitap.id} className="border-t hover:bg-[#fff9f2]">
+            <tr key={kitap.id} className="border-t hover:bg-[#fefaf3]">
               <td className="p-3">{kitap.ad}</td>
               <td className="p-3">{kitap.yazar}</td>
-              <td className={`p-3 font-medium ${kitap.durum === "Müsait" ? "text-green-600" : "text-[#7858A6]"}`}>
+              <td
+                className={`p-3 font-semibold ${
+                  kitap.durum === "Müsait" ? "text-green-600" : "text-[#7858A6]"
+                }`}
+              >
                 {kitap.durum}
               </td>
               <td className="p-3">{kitap.alan || "-"}</td>
@@ -93,7 +101,7 @@ const OduncYonetimi = () => {
                 {kitap.durum === "Ödünçte" && (
                   <button
                     onClick={() => handleIadeAl(kitap.id)}
-                    className="bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200"
+                    className="bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200 font-medium transition"
                   >
                     İade Al
                   </button>

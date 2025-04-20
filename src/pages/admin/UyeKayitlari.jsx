@@ -7,26 +7,29 @@ const UyeKayitlari = () => {
   ];
 
   return (
-    <div className="p-6 bg-white rounded shadow-lg">
-      <h2 className="text-2xl font-bold text-[#463C74] mb-4">Üye Kayıtları</h2>
-      <table className="w-full table-auto border-collapse">
-        <thead className="bg-[#fdd9a0]">
-          <tr>
-            <th className="p-2 text-left">Ad Soyad</th>
-            <th className="p-2 text-left">Email</th>
-            <th className="p-2 text-left">Kayıt Tarihi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {uyeler.map((uye) => (
-            <tr key={uye.id} className="border-t">
-              <td className="p-2">{uye.ad}</td>
-              <td className="p-2">{uye.email}</td>
-              <td className="p-2">{uye.tarih}</td>
+    <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#fdfbfa] to-[#f9f7f6] p-8 rounded-xl shadow-xl border border-gray-200">
+      <h2 className="text-3xl font-bold text-[#463C74] text-center mb-6 tracking-wide">👤 Üye Kayıtları</h2>
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm text-left text-gray-700 border border-gray-200 shadow-sm rounded-xl overflow-hidden">
+          <thead className="bg-[#fdd9a0] text-[#463C74] text-base font-semibold uppercase">
+            <tr>
+              <th className="px-6 py-4">Ad Soyad</th>
+              <th className="px-6 py-4">Email</th>
+              <th className="px-6 py-4">Kayıt Tarihi</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="divide-y divide-gray-200 bg-white">
+            {uyeler.map((uye) => (
+              <tr key={uye.id} className="hover:bg-[#fff5eb] transition">
+                <td className="px-6 py-4 font-medium">{uye.ad}</td>
+                <td className="px-6 py-4">{uye.email}</td>
+                <td className="px-6 py-4">{uye.tarih}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
