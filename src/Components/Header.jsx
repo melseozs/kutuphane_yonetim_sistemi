@@ -35,7 +35,7 @@ function Header({ showSearch = false }) {
             </div>
             <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48 z-20">
               <div className="p-4 hover:bg-orange-50 transition duration-300">
-                <Link to="/login" className="text-black text-lg">Kullanıcı İşlemleri</Link>
+                <Link to="/kullanici-islemleri" className="text-black text-lg">Kullanıcı İşlemleri</Link>
               </div>
               <div className="p-4 hover:bg-orange-50 transition duration-300">
                 <Link to="/admin" className="text-black text-lg">Yönetici İşlemleri</Link>
