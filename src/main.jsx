@@ -29,6 +29,7 @@ import CalismaSaatleri from './pages/About/CalismaSaatleri.jsx';
 import KutuphaneFoto from './pages/About/KutuphaneFoto.jsx';
 import SalonCalismalanlari from './pages/SalonCalismalanlari.jsx';
 import OduncGeciktirme from './pages/OduncGeciktirme.jsx';
+import BooksCatalog from './pages/OnlineKatalog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
       { path: 'duyurular/:id', element: <DuyuruDetay /> },
       { path: 'calisma-alanlari', element: <SalonCalismalanlari /> },
       { path: 'odunc-geciktirme', element: <OduncGeciktirme /> },
+      { path: 'online-katalog', element: <BooksCatalog /> },
     ],
   },
   {
