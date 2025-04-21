@@ -38,8 +38,6 @@ const OduncYonetimi = () => {
       <h2 className="text-3xl font-bold text-center text-[#463C74] border-b pb-6 mb-10">
         📚 Ödünç Verme Sayfası
       </h2>
-
-      {/* Ödünç Formu */}
       <div className="mb-10 flex flex-col md:flex-row gap-4 items-center justify-center">
         <select
           value={secilenKitapId}
@@ -72,8 +70,6 @@ const OduncYonetimi = () => {
           Ödünç Ver
         </button>
       </div>
-
-      {/* Kitap Listesi */}
       <table className="w-full table-auto border-collapse shadow-sm rounded overflow-hidden bg-white">
         <thead className="bg-[#fdd9a0] text-[#463C74] text-left">
           <tr>

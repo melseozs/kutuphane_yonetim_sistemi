@@ -18,14 +18,12 @@ const Kullaniciislemleri = () => {
   ];
 
   const handleLogout = () => {
-    // Kullanıcı token silinebilir, örnek:
     localStorage.removeItem('userToken');
     navigate('/');
   };
 
   return (
     <div className="flex min-h-screen bg-[#fff8f1] font-sans">
-      {/* SOL MENÜ */}
       <div className="w-64 bg-white border-r p-6 flex flex-col justify-between shadow-md">
         <div>
           <h2 className="text-2xl font-bold text-[#463C74] mb-8">👤Kullanıcı Paneli</h2>
@@ -47,8 +45,6 @@ const Kullaniciislemleri = () => {
             ))}
           </ul>
         </div>
-
-        {/* ÇIKIŞ BUTONU */}
         <button
           onClick={handleLogout}
           className="flex items-center gap-2 text-red-600 hover:text-red-800 text-sm hover:scale-105 transition mt-10"
@@ -57,8 +53,6 @@ const Kullaniciislemleri = () => {
           Çıkış Yap
         </button>
       </div>
-
-      {/* SAĞ İÇERİK */}
       <div className="flex-grow p-10 bg-white shadow-inner rounded-l-3xl">
         <Outlet />
       </div>

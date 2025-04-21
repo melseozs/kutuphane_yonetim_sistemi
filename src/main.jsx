@@ -56,6 +56,7 @@ const router = createBrowserRouter([
       { path: 'calisma-alanlari', element: <SalonCalismalanlari /> },
       { path: 'odunc-geciktirme', element: <OduncGeciktirme /> },
       { path: 'kullanici-islemleri', element: <Kullaniciislemleri /> },
+      { path: 'online-katalog', element: <BooksCatalog /> },
       { path: 'profilim', element: <Profilim /> },
       { path: 'kitaplarim', element: <Kitaplarim /> },
 

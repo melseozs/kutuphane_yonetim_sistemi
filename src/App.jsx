@@ -5,8 +5,6 @@ import Header from './Components/Header';
 
 function App() {
   const location = useLocation();
-
-  // Footer'ın görünmesini istemediğin pathleri buraya yaz
   const gizliFooterPathleri = ['/kullanici-islemleri', '/profilim','/kitaplarim'];
 
   return (
@@ -14,8 +12,6 @@ function App() {
       <div className="flex-grow">
         <Outlet />
       </div>
-
-      {/* Sadece belirli sayfalarda footer'ı gösterme */}
       {!gizliFooterPathleri.includes(location.pathname) && <Footer />}
     </div>
   );

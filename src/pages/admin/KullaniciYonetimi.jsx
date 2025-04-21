@@ -29,8 +29,6 @@ const KullaniciYonetimi = () => {
   return (
     <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#fffaf4] to-[#fef3e4] p-8 rounded-xl shadow-lg mt-10 border border-gray-200">
       <h2 className="text-3xl font-bold text-[#463C74] text-center mb-8 border-b pb-4">👥 Kullanıcı Yönetimi</h2>
-
-      {/* Ekleme Formu */}
       <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
         <input
           type="text"
@@ -54,8 +52,6 @@ const KullaniciYonetimi = () => {
           Ekle
         </button>
       </div>
-
-      {/* Kullanıcı Listesi */}
       <ul className="space-y-4">
         {kullanicilar.map((kullanici) => (
           <li

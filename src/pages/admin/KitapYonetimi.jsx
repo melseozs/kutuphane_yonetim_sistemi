@@ -65,8 +65,6 @@ const KitapYonetimi = () => {
           <input name="dosyaNo" type="text"
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-[#fdd9a0]" />
         </div>
-
-        {/* Kitap Görseli (Buton gibi) */}
         <div>
           <label className="block font-semibold text-sm mb-1 text-gray-700">Kitap Görseli</label>
           <label
@@ -83,8 +81,6 @@ const KitapYonetimi = () => {
             className="hidden"
           />
         </div>
-
-        {/* Butonlar */}
         <div className="md:col-span-2 flex justify-end gap-4 pt-6">
           <button
             type="submit"

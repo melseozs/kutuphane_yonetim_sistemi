@@ -40,12 +40,9 @@ const Istatistikler = () => {
 
   return (
     <div className="relative w-[550px] h-[550px] mx-auto my-10">
-      {/* Ortadaki ikon */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#fdd9a0] p-8 rounded-full shadow-lg border-4 border-white z-10">
         <FaBookReader className="text-5xl text-[#463C74]" />
       </div>
-
-      {/* Daire etrafındaki kutular */}
       {stats.map((stat, index) => (
         <div
           key={index}

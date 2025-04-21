@@ -18,7 +18,6 @@ const KullaniciPanel = () => {
 
   return (
     <div className="flex min-h-screen bg-[#f9f9f9]">
-      {/* Sol Menü */}
       <div className="w-64 bg-white border-r shadow-md p-6 flex flex-col justify-between">
         <div>
           <h2 className="text-xl font-bold text-[#463C74] mb-6">📘 Kullanıcı Paneli</h2>
@@ -40,8 +39,6 @@ const KullaniciPanel = () => {
             ))}
           </ul>
         </div>
-
-        {/* Çıkış */}
         <button
           onClick={handleLogout}
           className="mt-10 flex items-center gap-2 text-red-500 hover:text-red-700 text-sm hover:scale-105 transition"
@@ -50,8 +47,6 @@ const KullaniciPanel = () => {
           Çıkış Yap
         </button>
       </div>
-
-      {/* Sağ içerik */}
       <div className="flex-grow p-10">
         <Outlet />
       </div>
