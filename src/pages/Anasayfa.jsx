@@ -5,7 +5,7 @@ import duyurular from '../data/duyurular.json';
 
 function Anasayfa() {
   const services = [
-    { title: 'Kullanıcı İşlemleri', image: 'src/assets/service1.jpeg', link: '/login' },
+    { title: 'Kullanıcı İşlemleri', image: 'src/assets/service1.jpeg', link: '/kullanici-islemleri'  },
     { title: 'Ödünç Geciktirme Ücretleri', image: 'src/assets/service2.jpeg', link: '/odunc-geciktirme' },
     { title: 'Online Katalog', image: 'src/assets/service3.jpeg', link: '/online-katalog' },
     { title: 'Yönetici İşlemleri', image: 'src/assets/service4.jpeg', link: '/admin' },
