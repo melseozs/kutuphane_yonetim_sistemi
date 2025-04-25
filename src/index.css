@@ -30,7 +30,7 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 9999px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -49,4 +49,43 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+}
+.link-underline {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #463C74;
+  bottom: 0;
+  left: -100%;
+  transition: left 0.3s ease;
+}
+
+.link-underline:hover::after {
+  left: 0;
+}
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #463C74;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
