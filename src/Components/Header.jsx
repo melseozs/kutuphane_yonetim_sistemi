@@ -7,6 +7,15 @@ function Header() {
 
   return (
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[92%] h-[70px] bg-[rgba(255,255,255,0.15)] backdrop-blur-xl shadow-lg rounded-[20px] px-10 border border-black border-opacity-20">
+      <div className="relative h-full flex items-center justify-center">
+
+        {/* Logo - Sol Üstte */}
+        <div className="absolute left-8 flex items-center space-x-4">
+          <img src={logo} alt="Logo" className="h-10 w-10 rounded-xl" />
+          <span className="text-black font-bold text-lg tracking-wide drop-shadow">
+            BOOKSY
+          </span>
+        </div>
       <div className="relative h-full flex items-center justify-between">  {/* items-center ile dikeyde ortalama, justify-between ile iki kenara yerleştirme */}
         
         {/* Logo */}
