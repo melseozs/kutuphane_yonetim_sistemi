@@ -7,31 +7,17 @@ function Header() {
 
   return (
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[92%] h-[70px] bg-[rgba(255,255,255,0.15)] backdrop-blur-xl shadow-lg rounded-[20px] px-10 border border-black border-opacity-20">
-      <div className="relative h-full flex items-center justify-center">
-
-        {/* Logo - Sol Üstte */}
-        <div className="absolute left-8 flex items-center space-x-4">
-          <img src={logo} alt="Logo" className="h-10 w-10 rounded-xl" />
-          <span className="text-black font-bold text-lg tracking-wide drop-shadow">
-            BOOKSY
-          </span>
-        </div>
-      <div className="relative h-full flex items-center justify-between">  {/* items-center ile dikeyde ortalama, justify-between ile iki kenara yerleştirme */}
+      <div className="relative h-full flex items-center justify-between">
         
-        {/* Logo */}
         <div className="absolute left-8 flex items-center">
           <img src={logo} alt="Logo" className="h-22 w-22 rounded-xl" />
           <span className="text-black font-bold text-3xl tracking-wide drop-shadow">
             BOOKSY
           </span>
         </div>
-
-        {/* Navigasyon */}
-        <nav className="flex space-x-10 text-center relative w-full justify-center items-center"> {/* justify-center ile tüm menüyü ortala, items-center ile dikeyde hizala */}
+        <nav className="flex space-x-10 text-center relative w-full justify-center items-center">
           <Link to="/about" className="text-black hover:text-[#ece8de] font-medium transition nav-link mx-3">Hakkımızda</Link>
           <Link to="/" className="text-black hover:text-[#ece8de] font-medium transition nav-link mx-3">Anasayfa</Link>
-
-          {/* Hizmetler Dropdown */}
           <div 
             className="relative group text-center p-4 hover:bg-[rgba(255,255,255,0.15)] hover:rounded-lg transition duration-300 m-2"
             onMouseEnter={() => setShowServices(true)}
@@ -40,7 +26,7 @@ function Header() {
             <span className="text-black hover:text-[#ece8de] font-medium transition nav-link cursor-pointer mx-3">
               Hizmetler
             </span>
-            <div className={`absolute left-0 ${showServices ? 'block' : 'hidden'} bg-[rgba(255,255,255,0.67)] shadow-lg rounded-lg mt-4 w-48 z-20`}>
+            <div className={`absolute left-0 ${showServices ? 'block' : 'hidden'} bg-[rgba(255,255,255,0.60)] shadow-lg rounded-lg mt-4 w-48 z-20`}>
               <div className="p-2 hover:bg-orange-50 transition duration-300 rounded-lg">
                 <Link to="/kullanici-islemleri" className="text-black text-lg">Kullanıcı İşlemleri</Link>
               </div>
