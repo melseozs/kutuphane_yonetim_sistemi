@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const AdminPage = () => {
+const KullaniciLogin = () => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -10,8 +10,8 @@ const AdminPage = () => {
     const username = e.target.username.value;
     const password = e.target.password.value;
 
-    if (username === 'admin' && password === '1234') {
-      navigate('/admin-panel/kitap-yonetimi');
+    if (username === 'kullanici' && password === '5678') {
+        navigate('/kullanici-islemleri');
     } else {
       alert('Kullanıcı adı veya şifre yanlış!');
     }
@@ -25,7 +25,7 @@ const AdminPage = () => {
       }}
     >
       <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md w-96 h-80 space-y-4 flex flex-col justify-between items-center">
-        <h2 className="text-2xl font-bold text-center mb-4">Admin Girişi</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Kullanıcı Girişi</h2>
         <input
           type="text"
           name="username"
@@ -40,8 +40,7 @@ const AdminPage = () => {
         />
         <button
           type="submit"
-          className="w-full bg-[#fdd9a0] text-black py-2 rounded hover:bg-[#fcb96e]"
-        >
+          className="w-full bg-[#fdd9a0] text-black py-2 rounded hover:bg-[#fcb96e]">
           Giriş Yap
         </button>
       </form>
@@ -49,4 +48,4 @@ const AdminPage = () => {
   );
 };
 
-export default AdminPage;
+export default KullaniciLogin;

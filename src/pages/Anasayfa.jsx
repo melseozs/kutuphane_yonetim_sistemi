@@ -39,7 +39,7 @@ function Anasayfa() {
               Yönetici Giriş
             </Link>
             <Link
-              to="/kullanici-islemleri"
+              to="/kullanici-login"
               className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
             >
               Kullanıcı Giriş

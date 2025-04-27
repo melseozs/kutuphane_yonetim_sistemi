@@ -7,7 +7,7 @@ import App from './App.jsx';
 import Anasayfa from './pages/Anasayfa.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
-//import LoginPage from './Services/LoginPage.jsx';
+// import LoginPage from './Services/LoginPage.jsx';
 import FAQ from './Services/FAQ.jsx';
 import BooksList from './BooksList.jsx';
 import Duyurular from './pages/duyurular/Duyurular.jsx';
@@ -31,9 +31,9 @@ import OduncGeciktirme from './pages/OduncGeciktirme.jsx';
 import BooksCatalog from './pages/OnlineKatalog.jsx';
 
 import Kullaniciislemleri from './pages/kullanici/kullaniciislemleri.jsx';
-import KullaniciPanel from './pages/kullanici/KullaniciPanel.jsx';
 import Profilim from './pages/kullanici/Profilim.jsx';
 import Kitaplarim from './pages/kullanici/Kitaplarim.jsx';
+import KullaniciLogin from './pages/kullanici/KullaniciLogin.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       { path: 'about/saatler', element: <CalismaSaatleri /> },
       { path: 'about/foto', element: <KutuphaneFoto /> },
       { path: 'contact', element: <Contact /> },
-      //{ path: 'login', element: <LoginPage /> },
+      // { path: 'login', element: <LoginPage /> },
       { path: 'admin', element: <AdminPage /> },
       { path: 'faq', element: <FAQ /> },
       { path: 'nadide-eserler', element: <BooksList /> },
@@ -55,12 +55,18 @@ const router = createBrowserRouter([
       { path: 'duyurular/:id', element: <DuyuruDetay /> },
       { path: 'calisma-alanlari', element: <SalonCalismalanlari /> },
       { path: 'odunc-geciktirme', element: <OduncGeciktirme /> },
-      { path: 'kullanici-islemleri', element: <Kullaniciislemleri /> },
       { path: 'online-katalog', element: <BooksCatalog /> },
-      { path: 'profilim', element: <Profilim /> },
-      { path: 'kitaplarim', element: <Kitaplarim /> },
+      { path: 'kullanici-login', element: <KullaniciLogin /> },
 
-
+      // 🔥 KULLANICI PANELİ VE ALT SAYFALAR
+      {
+        path: 'kullanici-islemleri',
+        element: <Kullaniciislemleri />,
+        children: [
+          { path: 'profilim', element: <Profilim /> },
+          { path: 'kitaplarim', element: <Kitaplarim /> },
+        ],
+      },
     ],
   },
   
@@ -74,7 +80,6 @@ const router = createBrowserRouter([
       { path: 'odunc-yonetimi', element: <OduncYonetimi /> },
       { path: 'uye-kayitlari', element: <UyeKayitlari /> },
       { path: 'hareketler', element: <Hareketler /> },
-
     ],
   },
 ]);
