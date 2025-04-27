@@ -10,7 +10,7 @@ const KullaniciLogin = () => {
     const username = e.target.username.value;
     const password = e.target.password.value;
 
-    if (username === 'kullanici' && password === '5678') {
+    if (username === 'kullanici' && password === '1234') {
         navigate('/kullanici-islemleri');
     } else {
       alert('Kullanıcı adı veya şifre yanlış!');
