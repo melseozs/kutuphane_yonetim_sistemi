@@ -10,7 +10,7 @@ function Anasayfa() {
     { title: 'Kullanıcı İşlemleri', image: 'src/assets/service1.jpeg', link: '/kullanici-islemleri' },
     { title: 'Ödünç Geciktirme Ücretleri', image: 'src/assets/service2.jpeg', link: '/odunc-geciktirme' },
     { title: 'Online Katalog', image: 'src/assets/service3.jpeg', link: '/online-katalog' },
-    { title: 'Yönetici İşlemleri', image: 'src/assets/service4.jpeg', link: '/admin' },
+    { title: 'Yönetici İşlemleri', image: 'src/assets/service4.jpeg', link:'/admin'},
     { title: 'Bilgi Kütüphane', image: 'src/assets/service5.jpeg', link: '/faq' },
     { title: 'Nadide Eserler', image: 'src/assets/service6.jpeg', link: '/nadide-eserler' },
   ];
@@ -28,19 +28,19 @@ function Anasayfa() {
           <div className="flex flex-col items-center justify-center space-y-4 z-20 mt-90">
             <button
               onClick={() => setShowMenu(true)}
-              className="w-64 px-12 py-4 text-[#463C74] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg rounded-full"
+              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg rounded-full"
             >
               Menü
             </button>
             <Link
               to="/admin"
-              className="w-64 px-12 py-4 text-[#463C74] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
+              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
             >
               Yönetici Giriş
             </Link>
             <Link
               to="/kullanici-islemleri"
-              className="w-64 px-12 py-4 text-[#463C74] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
+              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
             >
               Kullanıcı Giriş
             </Link>

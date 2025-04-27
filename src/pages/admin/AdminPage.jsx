@@ -19,7 +19,7 @@ const AdminPage = () => {
 
   return (
     <div className="min-h-screen bg-[#FAEEE7] flex justify-center items-center">
-      <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md w-80 space-y-4">
+      <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md w-96 h-80 space-y-4 flex flex-col justify-between items-center">
         <h2 className="text-2xl font-bold text-center mb-4">Admin Girişi</h2>
         <input
           type="text"
