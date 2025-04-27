@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
   display: block; 
+  background-color: antiquewhite;
 }
 
 h1 {
@@ -81,7 +82,7 @@ button:focus-visible {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #35241b;
+  background-color: black;
   transition: width 0.3s ease-in-out;
 }
 

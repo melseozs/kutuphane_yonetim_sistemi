@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Components/Header';
-import bg from '../assets/bg.jpg';
+import bg from '../assets/bg2.png';
 
 function Anasayfa() {
   const [showMenu, setShowMenu] = useState(false);
@@ -20,27 +20,27 @@ function Anasayfa() {
       <Header showSearch={true} />
 
       <div
-        className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center"
+        className="h-200 w-full bg-cover bg-center flex flex-col items-center justify-center"
         style={{ backgroundImage: `url(${bg})` }}
       >
         {/* Giriş Düğmeleri */}
         {!showMenu && (
-          <div className="flex flex-col items-center justify-center space-y-4 z-20 mt-90">
+          <div className="flex flex-col items-center justify-center space-y-4 z-20 mt-220">
             <button
               onClick={() => setShowMenu(true)}
-              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg rounded-full"
+              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30  hover:text-white backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg rounded-full"
             >
               Menü
             </button>
             <Link
               to="/admin"
-              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
+              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30  hover:text-white backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
             >
               Yönetici Giriş
             </Link>
             <Link
               to="/kullanici-login"
-              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
+              className="w-64 px-12 py-4 text-[#000000] bg-white/20 hover:bg-white/30 hover:text-white  backdrop-blur-md shadow-xl transition-all duration-300 font-semibold text-lg text-center rounded-full"
             >
               Kullanıcı Giriş
             </Link>
