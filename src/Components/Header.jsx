@@ -40,7 +40,7 @@ function Header() {
           </div>
 
           <Link to="/contact" className="text-black hover:text-gray-800 font-medium transition nav-link">İletişim</Link>
-          <Link to="/duyurular" className="text-black hover:text-gray-800 font-medium transition nav-link">Duyurular</Link>
+          <Link to="/duyurular" className="text-black hover:text-gray-800 font-medium transition nav-link">Duyurular.</Link>
         </nav>
 
       </div>
