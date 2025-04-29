@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../Components/Header';
 import bg from '../assets/bg2.png';
 
+
 function Anasayfa() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -20,7 +21,7 @@ function Anasayfa() {
       <Header showSearch={true} />
 
       <div
-        className="h-200 w-full bg-cover bg-center flex flex-col items-center justify-center"
+        className="h-200 w-full bg-contain bg-center flex flex-col items-center justify-center"
         style={{ backgroundImage: `url(${bg})` }}
       >
         {/* Giriş Düğmeleri */}
