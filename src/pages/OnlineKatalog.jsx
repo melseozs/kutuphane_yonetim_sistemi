@@ -3,7 +3,7 @@ import { FaFilter } from "react-icons/fa";
 import Header from "../Components/Header";
 
 
-const BooksList = () => {
+const OnlineKatalog = () => {
   const [showFilters, setShowFilters] = useState(false);
 
   const booksData = [
@@ -119,4 +119,4 @@ const BooksList = () => {
   );
 };
 
-export default BooksList;
+export default OnlineKatalog;

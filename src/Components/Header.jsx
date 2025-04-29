@@ -34,7 +34,7 @@ function Header() {
                 <Link to="/nadide-eserler" className="text-black text-lg">Nadide Eserler</Link>
               </div>
               <div className="p-2 hover:bg-neutral-100 transition duration-300 rounded-lg">
-                <Link to="/katalog" className="text-black text-lg">Online Katalog</Link>
+                <Link to="/online-katalog" className="text-black text-lg">Online Katalog</Link>
               </div>
               <div className="p-2 hover:bg-neutral-100 transition duration-300 rounded-lg">
                 <Link to="/calisma-alanlari" className="text-black text-lg">Salonlar ve Çalışma Alanları</Link>
