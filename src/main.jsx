@@ -21,8 +21,6 @@ import Istatistikler from './pages/admin/İstatistikler.jsx';
 import OduncYonetimi from './pages/admin/OduncYonetimi'; 
 import UyeKayitlari from './pages/admin/UyeKayitlari.jsx';
 import Hareketler from './pages/admin/Hareketler.jsx';
-
-import VizyonMisyon from './pages/About/VizyonMisyon.jsx';
 import KutuphaneKurallari from './pages/About/KutuphaneKurallari.jsx';
 import CalismaSaatleri from './pages/About/CalismaSaatleri.jsx';
 import KutuphaneFoto from './pages/About/KutuphaneFoto.jsx';
@@ -34,6 +32,7 @@ import Kullaniciislemleri from './pages/kullanici/kullaniciislemleri.jsx';
 import Profilim from './pages/kullanici/Profilim.jsx';
 import Kitaplarim from './pages/kullanici/Kitaplarim.jsx';
 import KullaniciLogin from './pages/kullanici/KullaniciLogin.jsx';
+import OnlineKatalog from './pages/OnlineKatalog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +41,6 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Anasayfa /> },
       { path: 'about', element: <About /> },
-      { path: 'about/vizyon', element: <VizyonMisyon /> },
       { path: 'about/kurallar', element: <KutuphaneKurallari /> },
       { path: 'about/saatler', element: <CalismaSaatleri /> },
       { path: 'about/foto', element: <KutuphaneFoto /> },
@@ -55,7 +53,7 @@ const router = createBrowserRouter([
       { path: 'duyurular/:id', element: <DuyuruDetay /> },
       { path: 'calisma-alanlari', element: <SalonCalismalanlari /> },
       { path: 'odunc-geciktirme', element: <OduncGeciktirme /> },
-      { path: 'online-katalog', element: <BooksCatalog /> },
+      { path: 'online-katalog', element: <OnlineKatalog /> },
       { path: 'kullanici-login', element: <KullaniciLogin /> },
 
       // 🔥 KULLANICI PANELİ VE ALT SAYFALAR
