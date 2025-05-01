@@ -5,21 +5,19 @@ import Header from './Components/Header';
 
 function App() {
   const location = useLocation();
-  const gizliFooterPathleri = ['/kullanici-islemleri', '/profilim', '/kitaplarim'];
+  const path = location.pathname;
+
+  // Sadece kullanıcı panelinde Header gizli
+  const gizliHeaderYollar = ['/kullanici-islemleri'];
+  const headerGizliMi = gizliHeaderYollar.some(base => path.startsWith(base));
 
   return (
     <div className="flex flex-col min-h-screen">
-      
-      {/* Header ister sabit ister scroll'la giden olabilir */}
-      <Header />
-
-      {/* Sayfa içeriği */}
+      {!headerGizliMi && <Header />}
       <main className="flex-grow">
         <Outlet />
       </main>
-
-      {/* Footer yalnızca belirli sayfalarda görünmesin */}
-      {!gizliFooterPathleri.includes(location.pathname) && <Footer />}
+      <Footer />
     </div>
   );
 }
