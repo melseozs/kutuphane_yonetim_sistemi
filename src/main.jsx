@@ -8,7 +8,7 @@ import Anasayfa from './pages/Anasayfa.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 // import LoginPage from './Services/LoginPage.jsx';
-import FAQ from './Services/FAQ.jsx';
+import FAQ from './pages/FAQ.jsx';
 import BooksList from './BooksList.jsx';
 import Duyurular from './pages/duyurular/Duyurular.jsx';
 import DuyuruDetay from './pages/duyurular/DuyuruDetay.jsx';
@@ -31,8 +31,9 @@ import BooksCatalog from './pages/OnlineKatalog.jsx';
 import Kullaniciislemleri from './pages/kullanici/kullaniciislemleri.jsx';
 import Profilim from './pages/kullanici/Profilim.jsx';
 import Kitaplarim from './pages/kullanici/Kitaplarim.jsx';
-import KullaniciLogin from './pages/kullanici/KullaniciLogin.jsx';
+import KullaniciLogin from './pages/Kullanici/KullaniciLogin.jsx';
 import OnlineKatalog from './pages/OnlineKatalog.jsx';
+import KullaniciKayit from './pages/Kullanici/KullaniciKayit.jsx';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
       { path: 'odunc-geciktirme', element: <OduncGeciktirme /> },
       { path: 'online-katalog', element: <OnlineKatalog /> },
       { path: 'kullanici-login', element: <KullaniciLogin /> },
+      { path: 'kullanici-register', element: <KullaniciKayit/> },
 
       // 🔥 KULLANICI PANELİ VE ALT SAYFALAR
       {
