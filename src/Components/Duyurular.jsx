@@ -3,40 +3,40 @@ import duyuru1 from '../assets/1.duyuru.jpeg';
 import duyuru2 from '../assets/2.duyuru.jpeg';
 import duyuru3 from '../assets/3.duyuru.jpeg';
 
-
 const duyurular = [
   {
     id: 1,
     baslik: "Yazılım Kulübü Etkinliği Başladı",
-    aciklama: "Yazılım Kulübü'nün düzenlediği etkinlik büyük ilgi gördü. Öğrenciler hem öğrendi hem eğlendi.",
+    aciklama: "Yazılım Kulübü’nün etkinliği büyük ilgi gördü.",
     resim: duyuru1,
   },
   {
     id: 2,
     baslik: "Kütüphane Haftası Kutlaması",
-    aciklama: "Kütüphane personeli tarafından organize edilen etkinlikte kitap okuma alışkanlığı vurgulandı.",
-    resim:  duyuru2,
+    aciklama: "Kitap okuma alışkanlığı vurgulandı.",
+    resim: duyuru2,
   },
   {
     id: 3,
     baslik: "TÜBİTAK Projeleri Tanıtıldı",
-    aciklama: "Öğrencilerin geliştirdiği projeler fakülte binasında sergilendi.",
+    aciklama: "Projeler fakülte binasında sergilendi.",
     resim: duyuru3,
   },
 ];
 
 const Duyurular = () => {
   return (
-    <section className="bg-[#fffded] py-10 px-4">
-      <h2 className="text-3xl font-bold text-center text-[#463C74] mb-8">Duyurular</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <section className="bg-[#fffbf2] py-10 px-4">
+      <h2 className="text-2xl font-bold text-center text-[#463C74] mb-6 tracking-wide">Duyurular</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
         {duyurular.map((duyuru) => (
-          <div key={duyuru.id} className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-[1.02] transition duration-300">
-            <img src={duyuru.resim} alt={duyuru.baslik} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-[#463C74] mb-2">{duyuru.baslik}</h3>
-              <p className="text-sm text-gray-600 mb-4">{duyuru.aciklama}</p>
-              <button className="text-[#7858A6] font-semibold hover:underline">Detay</button>
+          <div key={duyuru.id} className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300">
+            <img src={duyuru.resim} alt={duyuru.baslik} className="w-full h-40 object-cover" />
+            <div className="px-4 py-3">
+              <h3 className="text-base font-semibold text-[#5a4c82] mb-1">{duyuru.baslik}</h3>
+              <p className="text-xs text-gray-600 mb-2">{duyuru.aciklama}</p>
+              <button className="text-xs text-[#7858A6] font-medium hover:underline">Detay</button>
             </div>
           </div>
         ))}
