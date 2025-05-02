@@ -7,9 +7,10 @@ const KullaniciPanel = () => {
   const navigate = useNavigate();
 
   const menu = [
-    { label: 'Profilim', path: '/profilim', icon: <FaUser /> },
-    { label: 'Kitaplarım', path: '/kitaplarim', icon: <FaBook /> },
+    { label: 'Profilim', path: '/kullanici-islemleri/profilim', icon: <FaUser /> },
+    { label: 'Kitaplarım', path: '/kullanici-islemleri/kitaplarim', icon: <FaBook /> },
   ];
+  
 
   const handleLogout = () => {
     localStorage.removeItem('userToken');
