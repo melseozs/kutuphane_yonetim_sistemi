@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import { signup } from '../../Services/authService.js';  
+import { signup } from '../../Services/authService.js';
 
 const KullaniciKayit = () => {
   const navigate = useNavigate();
@@ -19,25 +19,33 @@ const KullaniciKayit = () => {
       return;
     }
 
-    const userData = { email, username, password };
+    const userData = {
+      email,
+      username,
+      password
+    };
 
     try {
-      const response = await signup(userData);  
-      console.log(response); 
-      navigate('/kullanici-login'); 
+      const response = await signup(userData);
+      console.log('Kayıt başarılı:', response.data);
+      navigate('/kullanici-login');
     } catch (error) {
-      setErrorMessage('Kayıt sırasında bir hata oluştu.');
+      console.error('Kayıt hatası:', error);
+      setErrorMessage(
+        error.response?.data?.message || 'Kayıt sırasında bir hata oluştu.'
+      );
     }
   };
 
   return (
     <div
       className="min-h-screen flex justify-center items-center bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/loginFoto.jpg')",
-      }}
+      style={{ backgroundImage: "url('/loginFoto.jpg')" }}
     >
-      <form onSubmit={handleSignup} className="bg-white p-8 rounded-lg shadow-md w-96 h-auto space-y-4 flex flex-col justify-between items-center">
+      <form
+        onSubmit={handleSignup}
+        className="bg-white p-8 rounded-lg shadow-md w-96 h-auto space-y-4 flex flex-col justify-between items-center"
+      >
         <h2 className="text-2xl font-bold text-center mb-4">Kayıt Ol</h2>
 
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
@@ -80,7 +88,10 @@ const KullaniciKayit = () => {
 
         <div className="text-sm">
           <p className="text-center">
-            Zaten hesabınız var mı? <a href="/kullanici-login" className="text-blue-500">Giriş yap</a>
+            Zaten hesabınız var mı?{' '}
+            <a href="/kullanici-login" className="text-blue-500">
+              Giriş yap
+            </a>
           </p>
         </div>
       </form>
