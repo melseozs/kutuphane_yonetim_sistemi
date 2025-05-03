@@ -34,6 +34,8 @@ import Kitaplarim from './pages/kullanici/Kitaplarim.jsx';
 import KullaniciLogin from './pages/Kullanici/KullaniciLogin.jsx';
 import OnlineKatalog from './pages/OnlineKatalog.jsx';
 import KullaniciKayit from './pages/Kullanici/KullaniciKayit.jsx';
+import KullaniciVerify from './pages/Kullanici/KullaniciVerify.jsx';
+import KullaniciResendCode from './pages/Kullanici/KullaniciResendCode.jsx';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,8 @@ const router = createBrowserRouter([
       { path: 'online-katalog', element: <OnlineKatalog /> },
       { path: 'kullanici-login', element: <KullaniciLogin /> },
       { path: 'kullanici-register', element: <KullaniciKayit/> },
+      { path: 'kullanici-verify', element: <KullaniciVerify/> },
+      { path: 'kullanici-resendcode', element: <KullaniciResendCode/> },
 
       // 🔥 KULLANICI PANELİ VE ALT SAYFALAR
       {
