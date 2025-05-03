@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaFilter } from "react-icons/fa";
+import { FaFilter, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Header from "../Components/Header";
 
 const OnlineKatalog = () => {
@@ -8,17 +8,17 @@ const OnlineKatalog = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
+  const [expandedBook, setExpandedBook] = useState(null); 
 
-  // API'den veri çekme
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         const response = await axios.get("http://localhost:8080/rest/api/Book/listAll");
-        console.log(response.data);  // Gelen veriyi kontrol et
+        console.log(response.data); 
         if (response.data && Array.isArray(response.data.data)) {
-          setBooksData(response.data.data);  // Veriyi doğru şekilde ayarlıyoruz
+          setBooksData(response.data.data);  
         } else {
-          setBooksData([]);  // Eğer kitaplar bulunamazsa boş dizi ile set et
+          setBooksData([]);  
         }
       } catch (err) {
         console.error("Kitaplar yüklenirken hata oluştu:", err);
@@ -30,6 +30,14 @@ const OnlineKatalog = () => {
   
     fetchBooks();
   }, []);
+
+  const toggleDetails = (bookId) => {
+    if (expandedBook === bookId) {
+      setExpandedBook(null); 
+    } else {
+      setExpandedBook(bookId); 
+    }
+  };
 
   return (
     <>
@@ -98,7 +106,7 @@ const OnlineKatalog = () => {
                 >
                   <div className="h-[65%] w-full">
                     <img
-                      src={`http://localhost:8080${book.kitapKapakfotosuUrl}`} // API'den gelen resim yolu
+                      src={`http://localhost:8080${book.kitapKapakfotosuUrl}`}
                       alt={book.ad}
                       className="w-full h-full object-cover"
                     />
@@ -112,6 +120,23 @@ const OnlineKatalog = () => {
                     <p className={`text-xs font-medium mt-2 ${book.durum === "MUSAIT" ? "text-green-600" : "text-red-500"}`}>
                       {book.durum === "MUSAIT" ? "Müsait" : "Ödünçte"}
                     </p>
+                    
+                    <button
+                      onClick={() => toggleDetails(book.id)}
+                      className="mt-3 text-sm text-gray-500 flex items-center justify-center"
+                    >
+                      {expandedBook === book.id ? <FaChevronUp /> : <FaChevronDown />} 
+                      Detaylar
+                    </button>
+
+                    {expandedBook === book.id && (
+                      <div className="mt-4 text-sm text-gray-700">
+                        <p><strong>ISBN:</strong> {book.isbn}</p>
+                        <p><strong>Yayın Yılı:</strong> {book.baskiYili}</p>
+                        <p><strong>Yayınevi:</strong> {book.publisherAd}</p>
+                        <p><strong>Dil:</strong> {book.dil}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
