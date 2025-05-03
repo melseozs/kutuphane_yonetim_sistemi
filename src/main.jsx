@@ -15,7 +15,7 @@ import DuyuruDetay from './pages/duyurular/DuyuruDetay.jsx';
 
 import AdminPage from './pages/admin/AdminPage.jsx';
 import AdminPanel from './pages/admin/AdminPanel.jsx';
-import KitapYonetimi from './pages/admin/KitapYonetimi.jsx';
+import KitapYonetimi from './pages/admin/KitapEkle.jsx';
 import KullaniciYonetimi from './pages/admin/KullaniciYonetimi.jsx';
 import Istatistikler from './pages/admin/İstatistikler.jsx';
 import OduncYonetimi from './pages/admin/OduncYonetimi'; 
@@ -36,6 +36,8 @@ import OnlineKatalog from './pages/OnlineKatalog.jsx';
 import KullaniciKayit from './pages/Kullanici/KullaniciKayit.jsx';
 import KullaniciVerify from './pages/Kullanici/KullaniciVerify.jsx';
 import KullaniciResendCode from './pages/Kullanici/KullaniciResendCode.jsx';
+import KitapYonet from './pages/admin/KitapYonet.jsx';
+import KitapEkle from './pages/admin/KitapEkle.jsx';
 
 const router = createBrowserRouter([
   {
@@ -78,7 +80,9 @@ const router = createBrowserRouter([
     path: '/admin-panel',
     element: <AdminPanel />,
     children: [
-      { path: 'kitap-yonetimi', element: <KitapYonetimi /> },
+      { path: 'kitap-ekle', element: <KitapEkle /> },
+      { path: 'kitap-yonet', element: <KitapYonet /> },
+      
       { path: 'kullanici-yonetimi', element: <KullaniciYonetimi /> },
       { path: 'istatistikler', element: <Istatistikler /> },
       { path: 'odunc-yonetimi', element: <OduncYonetimi /> },

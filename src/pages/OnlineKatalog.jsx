@@ -1,41 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { FaFilter } from "react-icons/fa";
 import Header from "../Components/Header";
 
-
 const OnlineKatalog = () => {
+  const [booksData, setBooksData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
 
-  const booksData = [
-    {
-      id: 1,
-      title: "Kürk Mantolu Madonna",
-      author: "Sabahattin Ali",
-      image: "https://img.kitapyurdu.com/v1/getImage/fn:1207631/wh:true/wi:220",
-      available: true,
-    },
-    {
-      id: 2,
-      title: "1984",
-      author: "George Orwell",
-      image: "https://i.dr.com.tr/cache/500x400-0/originals/0000000064038-1.jpg",
-      available: false,
-    },
-    {
-      id: 3,
-      title: "Simyacı",
-      author: "Paulo Coelho",
-      image: "https://m.media-amazon.com/images/S/aplus-media/sota/dfee7b91-56e5-448b-9b5c-d1f5a471ffe5.__CR13,60,973,602_PT0_SX970_V1___.png",
-      available: true,
-    },
-    {
-      id: 4,
-      title: "Bilinmeyen Bir Kadının Mektubu",
-      author: "Stefan Zweig",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZMiHjUkVkW054nbefjmFIXVs9WmJrLCuJSw&s",
-      available: true,
-    },
-  ];
+  // API'den veri çekme
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/rest/api/Book/listAll");
+        console.log(response.data);  // Gelen veriyi kontrol et
+        if (response.data && Array.isArray(response.data.data)) {
+          setBooksData(response.data.data);  // Veriyi doğru şekilde ayarlıyoruz
+        } else {
+          setBooksData([]);  // Eğer kitaplar bulunamazsa boş dizi ile set et
+        }
+      } catch (err) {
+        console.error("Kitaplar yüklenirken hata oluştu:", err);
+        setError("Kitaplar yüklenirken bir hata oluştu.");
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchBooks();
+  }, []);
 
   return (
     <>
@@ -88,32 +82,44 @@ const OnlineKatalog = () => {
             )}
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
-          {booksData.map((book) => (
-            <div
-              key={book.id}
-              className="flex flex-col shadow-lg rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm mx-auto w-60 h-[420px] 
-              border border-pink-200 hover:border-gray-300 transform hover:scale-105 hover:shadow-gray-500 transition duration-300"
-            >
-              <div className="h-[65%] w-full">
-                <img
-                  src={book.image}
-                  alt={book.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-3 flex-1 flex flex-col justify-center items-center text-center space-y-1 bg-gradient-to-t from-pink-50 to-white">
-                <h2 className="text-lg font-semibold text-indigo-900">{book.title}</h2>
-                <p className="text-gray-700 text-sm">
-                  Yazar: <span className="text-pink-600">{book.author}</span>
-                </p>
-                <p className={`text-xs font-medium mt-2 ${book.available ? "text-green-600" : "text-red-500"}`}>
-                  {book.available ? "Müsait" : "Ödünçte"}
-                </p>
-              </div>
+
+        {loading ? (
+          <div className="flex justify-center mt-10">Yükleniyor...</div>
+        ) : error ? (
+          <div className="text-red-500 text-center mt-10">{error}</div>
+        ) : (
+          Array.isArray(booksData) && booksData.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
+              {booksData.map((book) => (
+                <div
+                  key={book.id}
+                  className="flex flex-col shadow-lg rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm mx-auto w-60 h-[420px] 
+                  border border-pink-200 hover:border-gray-300 transform hover:scale-105 hover:shadow-gray-500 transition duration-300"
+                >
+                  <div className="h-[65%] w-full">
+                    <img
+                      src={`http://localhost:8080${book.kitapKapakfotosuUrl}`} // API'den gelen resim yolu
+                      alt={book.ad}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-3 flex-1 flex flex-col justify-center items-center text-center space-y-1 bg-gradient-to-t from-pink-50 to-white">
+                    <h2 className="text-lg font-semibold text-indigo-900">{book.ad}</h2>
+                    <p className="text-gray-700 text-sm">
+                      Yazar: <span className="text-pink-600">{book.authorAd} {book.authorSoyad}</span>
+                    </p>
+                    <p className="text-xs text-gray-600">Kategori: {book.categoryAd}</p>
+                    <p className={`text-xs font-medium mt-2 ${book.durum === "MUSAIT" ? "text-green-600" : "text-red-500"}`}>
+                      {book.durum === "MUSAIT" ? "Müsait" : "Ödünçte"}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          ) : (
+            <div className="text-center mt-10">Kitaplar bulunamadı.</div>
+          )
+        )}
       </div>
     </>
   );

@@ -1,26 +1,30 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/rest/api/Book/save'; 
+const API_URL = 'http://localhost:8080/rest/api/Book/save';
 
-export const addBook = async (bookData) => {
+export const addBook = async (kitapData) => {
   try {
-    const token = localStorage.getItem('token');
-
     const formData = new FormData();
-    Object.entries(bookData).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
 
-    const response = await axios.post(API_URL, formData, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    for (const key in kitapData) {
+      if (key !== 'file') {
+        formData.append(key, kitapData[key]);
+      }
+    }
+
+    formData.append("file", kitapData.file);
+
+    console.log("📦 FormData Gönderiliyor:");
+    for (const pair of formData.entries()) {
+      console.log(pair[0], pair[1]);
+    }
+
+    // ❌ headers kısmını tamamen kaldır
+    const response = await axios.post(API_URL, formData);
 
     return response.data;
   } catch (error) {
-    console.error('Kitap eklenirken hata:', error.response?.data || error.message);
+    console.error("Kitap eklenirken hata:", error);
     throw error;
   }
 };

@@ -11,7 +11,7 @@ const AdminPage = () => {
     const password = e.target.password.value;
 
     if (username === 'admin' && password === '1234') {
-      navigate('/admin-panel/kitap-yonetimi');
+      navigate('/admin-panel/kitap-ekle');
     } else {
       alert('Kullanıcı adı veya şifre yanlış!');
     }

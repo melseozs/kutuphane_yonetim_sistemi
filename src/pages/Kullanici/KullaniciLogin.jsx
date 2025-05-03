@@ -14,7 +14,20 @@ const KullaniciLogin = () => {
     try {
       const response = await login({ email, password });
       console.log('Giriş başarılı:', response);
-      navigate('/kullanici-islemleri');  // giriş sonrası yönlendirme
+      
+      // JWT token'ı ve rol bilgisini localStorage'a kaydet
+      const token = response.token;
+      const decodedToken = jwt_decode(token);
+      const role = decodedToken.role || 'USER';  // Varsayılan 'USER' rolü
+      localStorage.setItem('token', token);
+      localStorage.setItem('role', role);
+      
+      // Kullanıcı rolüne göre yönlendirme
+      if (role === 'ADMIN') {
+        navigate('/admin-dashboard');  // Yönetici için yönlendirme
+      } else {
+        navigate('/kullanici-islemleri');  // Kullanıcı için yönlendirme
+      }
     } catch (error) {
       console.error('Giriş hatası:', error);
       setErrorMessage('E-posta veya şifre yanlış!');

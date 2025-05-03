@@ -9,7 +9,8 @@ const AdminPanel = () => {
   const menuItems = [
     { label: 'Ana Sayfa', path: '/', icon: <FaHome /> },
     { label: 'Ödünç Yönetimi', path: '/admin-panel/odunc-yonetimi', icon: <FaSync /> },
-    { label: 'Kitap Yönetimi', path: '/admin-panel/kitap-yonetimi', icon: <FaBook /> },
+    { label: 'Kitap Ekle', path: '/admin-panel/kitap-ekle', icon: <FaBook /> },
+    { label: 'Kitap Yönetimi', path: '/admin-panel/kitap-yonet', icon: <FaBook /> },
     { label: 'Kullanıcı Yönetimi', path: '/admin-panel/kullanici-yonetimi', icon: <FaUsersCog /> },
     { label: 'İstatistikler', path: '/admin-panel/istatistikler', icon: <FaChartBar /> },
     { label: 'Üye Kayıtları', path: '/admin-panel/uye-kayitlari', icon: <FaUsers /> },
