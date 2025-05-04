@@ -27,7 +27,7 @@ export const login = async (credentials) => {
       localStorage.setItem('role', role);
     }
 
-    return response.data;
+    return response.data;  // Token ve role bilgisi ile geri dön
   } catch (err) {
     console.error('Login işlemi sırasında hata:', err);
     throw err;  // Hata ile ilgili bilgi ver

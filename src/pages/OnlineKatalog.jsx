@@ -5,20 +5,28 @@ import Header from "../Components/Header";
 
 const OnlineKatalog = () => {
   const [booksData, setBooksData] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [publishers, setPublishers] = useState([]);
+  const [authors, setAuthors] = useState([]);
+  const [languages, setLanguages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedPublisher, setSelectedPublisher] = useState("all");
+  const [selectedAuthor, setSelectedAuthor] = useState("all");
+  const [selectedLanguage, setSelectedLanguage] = useState("all");
   const [showFilters, setShowFilters] = useState(false);
-  const [expandedBook, setExpandedBook] = useState(null); 
+  const [expandedBook, setExpandedBook] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         const response = await axios.get("http://localhost:8080/rest/api/Book/listAll");
-        console.log(response.data); 
         if (response.data && Array.isArray(response.data.data)) {
-          setBooksData(response.data.data);  
+          setBooksData(response.data.data);
         } else {
-          setBooksData([]);  
+          setBooksData([]);
         }
       } catch (err) {
         console.error("Kitaplar yüklenirken hata oluştu:", err);
@@ -27,15 +35,78 @@ const OnlineKatalog = () => {
         setLoading(false);
       }
     };
-  
+
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/rest/api/Category/listAllCategories");
+        if (response.data && response.data.data) {
+          setCategories(response.data.data);
+        } else {
+          setCategories([]);
+        }
+      } catch (err) {
+        console.error("Kategoriler yüklenirken hata oluştu:", err);
+        setError("Kategoriler yüklenirken bir hata oluştu.");
+      }
+    };
+
+    const fetchPublishers = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/rest/api/Publisher/listAllPublishers");
+        if (response.data && response.data.data) {
+          setPublishers(response.data.data);
+        } else {
+          setPublishers([]);
+        }
+      } catch (err) {
+        console.error("Yayınevleri yüklenirken hata oluştu:", err);
+        setError("Yayınevleri yüklenirken bir hata oluştu.");
+      }
+    };
+
+    const fetchAuthors = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/rest/api/Author/listAllAuthors");
+        if (response.data && response.data.data) {
+          setAuthors(response.data.data);
+        } else {
+          setAuthors([]);
+        }
+      } catch (err) {
+        console.error("Yazarlar yüklenirken hata oluştu:", err);
+        setError("Yazarlar yüklenirken bir hata oluştu.");
+      }
+    };
+
     fetchBooks();
+    fetchCategories();
+    fetchPublishers();
+    fetchAuthors();
   }, []);
+
+  const filterBooks = () => {
+    return booksData.filter((book) => {
+      const matchesCategory =
+        selectedCategory === "all" || book.categoryAd === selectedCategory;
+      const matchesPublisher =
+        selectedPublisher === "all" || book.publisherAd === selectedPublisher;
+      const matchesAuthor =
+        selectedAuthor === "all" || book.authorAd === selectedAuthor;
+      const matchesLanguage =
+        selectedLanguage === "all" || book.dil === selectedLanguage;
+      const matchesSearch =
+        book.ad.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        `${book.authorAd} ${book.authorSoyad}`.toLowerCase().includes(searchQuery.toLowerCase());
+
+      return matchesCategory && matchesPublisher && matchesAuthor && matchesLanguage && matchesSearch;
+    });
+  };
 
   const toggleDetails = (bookId) => {
     if (expandedBook === bookId) {
-      setExpandedBook(null); 
+      setExpandedBook(null);
     } else {
-      setExpandedBook(bookId); 
+      setExpandedBook(bookId);
     }
   };
 
@@ -49,6 +120,8 @@ const OnlineKatalog = () => {
               <input
                 type="text"
                 placeholder="Kitap ara..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1 px-4 py-2 border border-orange-50 rounded-l-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-neutral-300"
               />
               <button
@@ -58,6 +131,7 @@ const OnlineKatalog = () => {
               </button>
             </div>
           </div>
+
           <div className="relative">
             <button
               onClick={() => setShowFilters(!showFilters)}
@@ -69,23 +143,64 @@ const OnlineKatalog = () => {
 
             {showFilters && (
               <div className="absolute z-10 mt-2 p-4 bg-white border border-gray-300 rounded-md shadow-lg w-72">
+                <h3 className="text-sm font-semibold text-gray-600 mb-2">Kategori</h3>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md mb-4"
+                >
+                  <option value="all">Tüm Kategoriler</option>
+                  {categories.map((category) => (
+                    <option key={category.id} value={category.ad}>
+                      {category.ad}
+                    </option>
+                  ))}
+                </select>
+
+                <h3 className="text-sm font-semibold text-gray-600 mb-2">Yayınevi</h3>
+                <select
+                  value={selectedPublisher}
+                  onChange={(e) => setSelectedPublisher(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md mb-4"
+                >
+                  <option value="all">Tüm Yayınevleri</option>
+                  {publishers.map((publisher) => (
+                    <option key={publisher.id} value={publisher.ad}>
+                      {publisher.ad}
+                    </option>
+                  ))}
+                </select>
+
+                <h3 className="text-sm font-semibold text-gray-600 mb-2">Yazar</h3>
+                <select
+                  value={selectedAuthor}
+                  onChange={(e) => setSelectedAuthor(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md mb-4"
+                >
+                  <option value="all">Tüm Yazarlar</option>
+                  {authors.map((author) => (
+                    <option key={author.id} value={author.ad}>
+                      {author.ad}
+                    </option>
+                  ))}
+                </select>
+
                 <h3 className="text-sm font-semibold text-gray-600 mb-2">Dil</h3>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-pink-100 text-sm rounded-full">Türkçe</span>
-                  <span className="px-3 py-1 bg-pink-100 text-sm rounded-full">İngilizce</span>
-                </div>
-
-                <h3 className="text-sm font-semibold text-gray-600 mb-2">Konu</h3>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-purple-100 text-sm rounded-full">Bilim</span>
-                  <span className="px-3 py-1 bg-purple-100 text-sm rounded-full">Tarih</span>
-                </div>
-
-                <h3 className="text-sm font-semibold text-gray-600 mb-2">Tür</h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-indigo-100 text-sm rounded-full">Roman</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-sm rounded-full">Deneme</span>
-                </div>
+                <select
+                  value={selectedLanguage}
+                  onChange={(e) => setSelectedLanguage(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                >
+                  <option value="all">Tüm Diller</option>
+                  {booksData
+                    .map((book) => book.dil)
+                    .filter((value, index, self) => self.indexOf(value) === index) // Remove duplicates
+                    .map((language, index) => (
+                      <option key={index} value={language}>
+                        {language}
+                      </option>
+                    ))}
+                </select>
               </div>
             )}
           </div>
@@ -96,15 +211,15 @@ const OnlineKatalog = () => {
         ) : error ? (
           <div className="text-red-500 text-center mt-10">{error}</div>
         ) : (
-          Array.isArray(booksData) && booksData.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
-              {booksData.map((book) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
+            {filterBooks().length > 0 ? (
+              filterBooks().map((book) => (
                 <div
                   key={book.id}
-                  className="flex flex-col shadow-lg rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm mx-auto w-60 h-[420px] 
+                  className="flex flex-col shadow-lg rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm mx-auto w-60 h-[460px] 
                   border border-pink-200 hover:border-gray-300 transform hover:scale-105 hover:shadow-gray-500 transition duration-300"
                 >
-                  <div className="h-[65%] w-full">
+                  <div className="h-[60%] w-full">
                     <img
                       src={`http://localhost:8080${book.kitapKapakfotosuUrl}`}
                       alt={book.ad}
@@ -120,12 +235,12 @@ const OnlineKatalog = () => {
                     <p className={`text-xs font-medium mt-2 ${book.durum === "MUSAIT" ? "text-green-600" : "text-red-500"}`}>
                       {book.durum === "MUSAIT" ? "Müsait" : "Ödünçte"}
                     </p>
-                    
+
                     <button
                       onClick={() => toggleDetails(book.id)}
                       className="mt-3 text-sm text-gray-500 flex items-center justify-center"
                     >
-                      {expandedBook === book.id ? <FaChevronUp /> : <FaChevronDown />} 
+                      {expandedBook === book.id ? <FaChevronUp /> : <FaChevronDown />}
                       Detaylar
                     </button>
 
@@ -139,11 +254,11 @@ const OnlineKatalog = () => {
                     )}
                   </div>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center mt-10">Kitaplar bulunamadı.</div>
-          )
+              ))
+            ) : (
+              <div className="text-center mt-10">Kitaplar bulunamadı.</div>
+            )}
+          </div>
         )}
       </div>
     </>

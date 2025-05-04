@@ -1,7 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+
+import { jwtDecode } from 'jwt-decode';
+
+
 
 import App from './App.jsx';
 import Anasayfa from './pages/Anasayfa.jsx';
@@ -18,7 +23,7 @@ import AdminPanel from './pages/admin/AdminPanel.jsx';
 import KitapYonetimi from './pages/admin/KitapEkle.jsx';
 import KullaniciYonetimi from './pages/admin/KullaniciYonetimi.jsx';
 import Istatistikler from './pages/admin/İstatistikler.jsx';
-import OduncYonetimi from './pages/admin/OduncYonetimi'; 
+import OduncYonetimi from './pages/admin/OduncYonetimi';
 import UyeKayitlari from './pages/admin/UyeKayitlari.jsx';
 import Hareketler from './pages/admin/Hareketler.jsx';
 import KutuphaneKurallari from './pages/About/KutuphaneKurallari.jsx';
@@ -38,6 +43,18 @@ import KullaniciVerify from './pages/Kullanici/KullaniciVerify.jsx';
 import KullaniciResendCode from './pages/Kullanici/KullaniciResendCode.jsx';
 import KitapYonet from './pages/admin/KitapYonet.jsx';
 import KitapEkle from './pages/admin/KitapEkle.jsx';
+// Admin kontrol fonksiyonu
+const isAdmin = () => {
+  const token = localStorage.getItem('token');
+  if (!token) return false;
+  try {
+    const decoded = jwtDecode(token);
+    return decoded.role === 'ADMIN';
+  } catch {
+    return false;
+  }
+};
+
 
 const router = createBrowserRouter([
   {
@@ -60,9 +77,9 @@ const router = createBrowserRouter([
       { path: 'odunc-geciktirme', element: <OduncGeciktirme /> },
       { path: 'online-katalog', element: <OnlineKatalog /> },
       { path: 'kullanici-login', element: <KullaniciLogin /> },
-      { path: 'kullanici-register', element: <KullaniciKayit/> },
-      { path: 'kullanici-verify', element: <KullaniciVerify/> },
-      { path: 'kullanici-resendcode', element: <KullaniciResendCode/> },
+      { path: 'kullanici-register', element: <KullaniciKayit /> },
+      { path: 'kullanici-verify', element: <KullaniciVerify /> },
+      { path: 'kullanici-resendcode', element: <KullaniciResendCode /> },
 
       // 🔥 KULLANICI PANELİ VE ALT SAYFALAR
       {
@@ -75,19 +92,18 @@ const router = createBrowserRouter([
       },
     ],
   },
-  
+
   {
     path: '/admin-panel',
-    element: <AdminPanel />,
+    element: isAdmin() ? <AdminPanel /> : <Navigate to="/admin" />,
     children: [
-      { path: 'kitap-ekle', element: <KitapEkle /> },
-      { path: 'kitap-yonet', element: <KitapYonet /> },
-      
-      { path: 'kullanici-yonetimi', element: <KullaniciYonetimi /> },
-      { path: 'istatistikler', element: <Istatistikler /> },
-      { path: 'odunc-yonetimi', element: <OduncYonetimi /> },
-      { path: 'uye-kayitlari', element: <UyeKayitlari /> },
-      { path: 'hareketler', element: <Hareketler /> },
+      { path: 'kitap-ekle', element: isAdmin() ? <KitapEkle /> : <Navigate to="/admin" /> },
+      { path: 'kitap-yonet', element: isAdmin() ? <KitapYonet /> : <Navigate to="/admin" /> },
+      { path: 'kullanici-yonetimi', element: isAdmin() ? <KullaniciYonetimi /> : <Navigate to="/admin" /> },
+      { path: 'istatistikler', element: isAdmin() ? <Istatistikler /> : <Navigate to="/admin" /> },
+      { path: 'odunc-yonetimi', element: isAdmin() ? <OduncYonetimi /> : <Navigate to="/admin" /> },
+      { path: 'uye-kayitlari', element: isAdmin() ? <UyeKayitlari /> : <Navigate to="/admin" /> },
+      { path: 'hareketler', element: isAdmin() ? <Hareketler /> : <Navigate to="/admin" /> },
     ],
   },
 ]);
