@@ -2,11 +2,10 @@ import React from 'react';
 
 const Profilim = () => {
   const kullanici = {
-    ad: "Zeynep Demir",
-    email: "zeynep.demir@example.com",
-    sinif: "3. Sınıf - Bilgisayar Mühendisliği",
-    dogumTarihi: "2002-06-15",
-    profilFoto: "https://i.pravatar.cc/150?img=32",
+    ad: "Merve Aksak",
+    email: "merve.aksak@example.com",
+    
+  
   };
 
   return (
@@ -31,11 +30,11 @@ const Profilim = () => {
             <p className="font-semibold text-lg text-[#463C74]">{kullanici.email}</p>
           </div>
           <div>
-            <label className="block text-gray-600 text-sm">Sınıf</label>
+           
             <p className="font-semibold text-lg text-[#463C74]">{kullanici.sinif}</p>
           </div>
           <div>
-            <label className="block text-gray-600 text-sm">Doğum Tarihi</label>
+            
             <p className="font-semibold text-lg text-[#463C74]">{kullanici.dogumTarihi}</p>
           </div>
         </div>
